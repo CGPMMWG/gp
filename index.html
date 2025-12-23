@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GP Consultora Política - Transformamos objetivos políticos en realidad</title>
+    <meta name="description" content="GP Consultora Política: estrategias, datos y comunicación para transformar objetivos políticos en resultados reales. Acompañamos campañas, gobiernos y líderes en cada etapa.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://trendmakers.agency/">
+    
+    <!-- Favicon principal -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Favicon adicional para dispositivos móviles -->
+    <link rel="icon" sizes="192x192" href="favicon-192x192.png">
+    <link rel="icon" sizes="32x32" href="favicon-32x32.png">
+
+    <!-- Meta etiquetas para Open Graph -->
+    <meta property="og:title" content="GP Consultora Política - Estrategia, datos y comunicación">
+    <meta property="og:description" content="Diseñamos campañas políticas, gestionamos crisis, analizamos datos y construimos narrativas que conectan con la ciudadanía.">
+    <meta property="og:image" content="https://trendmakers.agency/logo1.png">
+    <meta property="og:url" content="https://trendmakers.agency/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GP Consultora Política">
+    <meta name="twitter:description" content="Consultoría política, análisis de datos, comunicación estratégica y trabajo territorial para potenciar tu proyecto político.">
+    <meta name="twitter:image" content="https://trendmakers.agency/logo1.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GP Consultora Política",
+      "url": "https://trendmakers.agency/",
+      "logo": "https://trendmakers.agency/logo1.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/trendmakersagency",
+        "https://www.instagram.com/trendmakers.agency_?igsh=cTN1Z3N0ejk1YmJu"
+      ],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "email": "info@gp.com",
+        "contactType": "sales",
+        "availableLanguage": ["es", "en"]
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://trendmakers.agency/"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/header_overrides.css">
+    <link rel="stylesheet" href="./css/casos_overrides.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Enlace de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .menu-item {
+            font-weight: normal !important;
+        }
+
+        .highlight-bold {
+            font-weight: bold !important;
+        }
+
+        /* Por qué elegirnos */
+        .why-subtitle {
+            font-size: 1.1rem;
+            color: #e8defa;
+            margin: 8px auto 32px;
+            max-width: 760px;
+        }
+        .why-grid {
+            display: grid;
+            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+        .why-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 16px;
+            padding: 18px 18px 20px;
+            backdrop-filter: blur(12px);
+            transition: transform 180ms ease, border-color 180ms ease;
+            background-size: 180% 180%;
+        }
+        .why-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(123, 191, 255, 0.7);
+        }
+        .why-icon {
+            width: 38px;
+            height: 38px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #7bffb2, #5af0ff, #7b2ff7);
+            color: #0a0720;
+            font-weight: 900;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            box-shadow: 0 0 0 6px rgba(255,255,255,0.08);
+        }
+        .why-card h3 {
+            margin: 0 0 8px;
+            color: #f8f5ff;
+            font-size: 1.1rem;
+        }
+        .why-card p {
+            margin: 0;
+            color: #d8d2f0;
+            line-height: 1.55;
+            font-size: 0.98rem;
+        }
+        @media (max-width: 768px) {
+            /* Fondo fijo sin video en mobile y cards apiladas */
+            #acerca .video-container video {
+                display: none;
+            }
+            #acerca .video-container {
+                background:
+                  radial-gradient(900px 900px at 10% 10%, rgba(236,72,153,0.10), transparent 40%),
+                  radial-gradient(900px 900px at 90% 20%, rgba(59,130,246,0.08), transparent 45%),
+                  linear-gradient(135deg, #1b0b2e 0%, #34105a 50%, #4c1d95 100%);
+            }
+            .why-grid {
+                display: block;
+                padding: 0 16px;
+                width: 100%;
+                max-width: 540px;
+                margin: 0 auto;
+            }
+            .why-card {
+                box-sizing: border-box;
+                width: 100%;
+                margin: 0 auto 10px;
+            }
+            .why-card p { display: none; }
+            .why-card {
+                background: transparent;
+                border: none;
+                padding: 8px 0;
+            }
+            .why-card h3 {
+                text-align: center;
+                font-size: 1.05rem;
+            }
+        }
+
+        /* CTA del hero de blog - oval transparente */
+        #blog .blog-header .button {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            margin-top: 18px;
+            border-radius: 999px;
+            background: transparent;
+            color: #fff;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border: 2px solid rgba(255,255,255,0.9);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255,255,255,0.12);
+            backdrop-filter: blur(6px);
+            transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease, border-color 160ms ease, background-color 160ms ease;
+        }
+        #blog .blog-header .button::after {
+            display: none;
+        }
+        #blog .blog-header .button:hover {
+            transform: translateY(-3px) scale(1.01);
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.95);
+            box-shadow: 0 18px 38px rgba(0,0,0,0.45), 0 0 0 1px rgba(123,191,255,0.4);
+            filter: saturate(1.05);
+        }
+        #blog .blog-header .button:active {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+        }
+
+        /* Hero Bienvenidos redesign */
+        #inicio .overlay {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(18px, 5vw, 40px);
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            align-items: center;
+            gap: clamp(20px, 4vw, 36px);
+            width: 100%;
+            max-width: 1200px;
+        }
+        .hero-copy {
+            text-align: left;
+            display: grid;
+            gap: 14px;
+        }
+        .hero-copy h2 {
+            font-size: clamp(2rem, 1.4rem + 2vw, 3rem);
+            line-height: 1.1;
+            margin: 0;
+        }
+        .hero-copy p {
+            margin: 0;
+            color: #e8e3ff;
+            line-height: 1.6;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 24px;
+            border-radius: 999px;
+            background: linear-gradient(120deg, #00d1ff 0%, #7b2ff7 100%);
+            color: #0b0620;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 16px 34px rgba(0,0,0,0.35);
+            transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+        }
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 22px 44px rgba(0,0,0,0.45);
+            filter: saturate(1.05);
+        }
+        .hero-visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-brain {
+            width: 100%;
+            max-width: 920px;
+            border-radius: 0;
+            box-shadow: none;
+            opacity: 0;
+            animation: heroBrainIn 1.6s ease-out 0.2s forwards;
+            animation-play-state: paused;
+        }
+        .hero-brain.is-visible { animation-play-state: running; }
+        @keyframes heroBrainIn {
+            from { opacity: 0; transform: translateY(18px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @media (max-width: 768px) {
+            #inicio .overlay { padding: 20px 14px; }
+            .hero-copy { text-align: left; }
+            .hero-copy h2 { font-size: clamp(1.8rem, 5vw, 2.4rem); }
+        }
+
+        /* Servicios premium */
+        #servicios {
+            background: #0f1115 !important;
+        }
+        #servicios .video-container {
+            position: relative;
+            background: #0f1115;
+        }
+        #servicios .overlay {
+            background: #0f1115;
+            padding: clamp(60px, 7vw, 100px) clamp(16px, 5vw, 40px) clamp(80px, 8vw, 120px);
+        }
+         #servicios .overlay::before { display: none; content: none; }
+        #servicios .service-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 1240px;
+            margin: 28px auto 0;
+            padding: 6px;
+        }
+         #servicios .service-card {
+            position: relative;
+            background:
+                radial-gradient(120% 120% at 15% 15%, rgba(255, 255, 255, 0.06), transparent 42%),
+                radial-gradient(120% 120% at 85% 10%, rgba(255, 255, 255, 0.05), transparent 45%),
+                linear-gradient(150deg, rgba(15,17,23,0.96), rgba(9, 10, 14, 0.94));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 26px 20px 22px;
+            text-decoration: none;
+            color: #f5f2ff;
+            box-shadow: 0 26px 58px rgba(0,0,0,0.52);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: transform 200ms ease, box-shadow 220ms ease, border-color 200ms ease;
+            overflow: hidden;
+            isolation: isolate;
+        }
+        #servicios .service-card::before {
+            content: "";
+            position: absolute;
+            inset: 8px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+            opacity: 0.7;
+            pointer-events: none;
+        }
+         #servicios .service-card::after {
+            content: "";
+            position: absolute;
+            inset: -35%;
+            background:
+                radial-gradient(80% 80% at 50% 50%, rgba(255, 255, 255, 0.05), transparent 55%),
+                radial-gradient(70% 70% at 60% 40%, rgba(255, 255, 255, 0.04), transparent 60%);
+            opacity: 0.55;
+            filter: blur(28px);
+            transition: opacity 200ms ease, transform 200ms ease;
+            pointer-events: none;
+            z-index: -1;
+        }
+        #servicios .service-card:hover {
+            transform: translateY(-8px) scale(1.015);
+            box-shadow: 0 32px 70px rgba(0,0,0,0.6);
+            border-color: rgba(1, 12, 22, 0.6);
+        }
+        #servicios .service-card:hover::after {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+        #servicios .service-card img {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 12px;
+            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35));
+        }
+        #servicios .service-card h3 {
+            text-align: center;
+            color: #f8f9ff !important;
+            font-family: 'Inter', 'Space Grotesk', system-ui, -apple-system, sans-serif;
+            font-weight: 800;
+            font-size: 1.08rem;
+            margin: 6px 0 8px;
+            letter-spacing: 0.005em;
+        }
+        #servicios .service-card p {
+            text-align: center;
+            color: #cfd4f1;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin: 0 auto;
+            max-width: 260px;
+        }
+        /* Halo suave detras de las cards para destacar la seccion */
+         #servicios .overlay {
+            position: relative;
+            overflow: visible;
+        }
+         #servicios .overlay::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 78px;
+            width: min(1180px, 94vw);
+            height: 520px;
+            background:
+                radial-gradient(60% 55% at 20% 30%, rgba(255, 255, 255, 0.06), transparent 60%),
+                radial-gradient(58% 60% at 80% 25%, rgba(255, 255, 255, 0.05), transparent 62%),
+                radial-gradient(80% 60% at 50% 72%, rgba(255, 255, 255, 0.08), transparent 74%);
+            filter: blur(42px);
+            opacity: 0.9;
+            pointer-events: none;
+            z-index: 0;
+        }
+        #servicios .overlay > * {
+            position: relative;
+            z-index: 1;
+        }
+        #servicios .services-cta-wrap {
+            text-align: center;
+            margin: 18px 0 16px;
+        }
+        #servicios .services-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 22px;
+            border-radius: 999px;
+            border: 2px solid rgba(255,255,255,0.85);
+            background: rgba(255,255,255,0.04);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 800;
+            box-shadow: 0 12px 26px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.08);
+            backdrop-filter: blur(8px);
+            transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease, border-color 150ms ease;
+        }
+        #servicios .services-cta:hover {
+            transform: translateY(-2px);
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(123,191,255,0.85);
+            box-shadow: 0 18px 38px rgba(0,0,0,0.45);
+        }
+        /* Oculta la línea fina por defecto en el título de servicios */
+        #servicios .section-title::after { display: none; content: none; }
+
+        @media (max-width: 768px) {
+            #servicios .overlay::before {
+                top: 120px;
+                width: 105%;
+                height: 740px;
+            }
+            #servicios .service-details {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                max-width: 680px;
+            }
+            #servicios .service-card {
+                padding: 20px 14px 18px;
+            }
+            #servicios .service-card h3 {
+                font-size: 1.02rem;
+            }
+            #servicios .service-card p {
+                font-size: 0.93rem;
+            }
+            #servicios .service-card:nth-child(5) {
+                grid-column: 1 / 3;
+                justify-self: center;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+    <div class="content">
+        <nav>
+            <a class="tm-header-badge" href="#inicio" aria-label="GP home" id="tm-badge">
+                <img src="./img/TrendMakers-Header.png" alt="GP Consultora Política">
+            </a>
+            <div class="tm-quick-menu" id="tm-quick-menu" aria-label="Accesos rápidos">
+                <a href="https://www.instagram.com/trendmakers.agency_?igsh=cTN1Z3N0ejk1YmJu" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+                <a href="https://www.linkedin.com/company/trendmakersagency" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+                <a class="mailto-dynamic" href="mailto:info@gp.com?subject=Consulta%20sobre%20consultor%C3%ADa%20pol%C3%ADtica&body=Hola,%20%C2%BFc%C3%B3mo%20est%C3%A1n%3F%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20consultor%C3%ADa%20pol%C3%ADtica.%20Muchas%20gracias." target="_blank" aria-label="Email">Email</a>
+                <a href="https://wa.me/541122549351?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20consultor%C3%ADa%20pol%C3%ADtica." target="_blank" aria-label="WhatsApp">WhatsApp</a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="desktop-menu top-agency-menu">
+                <li><a href="#inicio" id="nav-inicio" class="menu-item">Inicio</a></li>
+                <li><a href="#servicios" id="nav-servicios" class="menu-item">Servicios</a></li>
+                <li class="dropdown about-dropdown">
+                    <button id="nav-acerca" class="menu-item dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                        Nosotros <span class="caret">v</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#equipo" id="nav-equipo" class="menu-item">Equipo</a></li>
+                        <li><a href="#acerca" id="nav-nosotros" class="menu-item">Nosotros</a></li>
+                        <li><a href="blog/index.html" id="nav-blog" class="menu-item">Blog</a></li>
+                    </ul>
+                </li>
+<li><a href="#contact-form" id="nav-contacto" class="menu-item nav-cta">Contacto</a></li>
+            </ul>
+            <div class="nav-lang">
+              <div class="language-selector" aria-label="Selector de idioma">
+                <button class="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Seleccionar idioma">
+                  <img src="./img/IDIOMA.PNG" alt="Idioma">
+                </button>
+                <div class="lang-menu" role="menu" aria-label="Idiomas">
+                  <button class="lang-option" role="menuitem" data-lang="es">Espa&ntilde;ol</button>
+                  <button class="lang-option" role="menuitem" data-lang="en">English</button>
+                </div>
+              </div>
+            </div>
+            <ul class="mobile-menu">
+                <li><a href="#inicio" id="nav-inicio" class="menu-item" onclick="closeMenu()">Inicio</a></li>
+                <li><a href="#servicios" id="nav-servicios" class="menu-item" onclick="closeMenu()">Servicios</a></li>
+                <li class="mobile-heading">Nosotros</li>
+                <li><a href="#equipo" id="nav-equipo-mobile" class="menu-item" onclick="closeMenu()">Equipo</a></li>
+                <li><a href="#acerca" id="nav-nosotros-mobile" class="menu-item" onclick="closeMenu()">Nosotros</a></li>
+                <li><a href="blog/index.html" class="menu-item" onclick="closeMenu()" id="nav-blog-mobile">Blog</a></li>
+<li><a href="#contact-form" id="nav-contacto-mobile" class="menu-item nav-cta" onclick="closeMenu()">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <header>
+            <div class="video-container">
+                <video autoplay muted loop playsinline id="background-video">
+                    <source src="./video/backgroundvid.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <div class="title-container">
+                        <img src="./img/logo1.png" alt="GP Consultora Política" class="logo animate__animated">
+                        <div class="text-container">
+                            <h1 id="title" class="animate__animated">GP Consultora Política</h1>
+                            <p id="subtitle" class="animate__animated">Transformando objetivos pol&iacute;ticos en realidad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="inicio" class="section">
+            <div class="video-container">
+                <video autoplay muted loop playsinline id="background-video2">
+                    <source src="./video/backgroundvid2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <div class="hero-shell">
+                        <h2 id="intro-title" class="section-title animate__animated">Bienvenido a GP Consultora Pol&iacute;tica</h2>
+                        <div class="hero-cards">
+                            <div class="hero-card hero-flags animate__animated animate__fadeInUp">
+                                <h3>Pa&iacute;ses donde hemos trabajado</h3>
+                                <div class="hero-flags-grid">
+                                    <div class="flag-slot"><img src="./img/BANDERA1.webp" alt="Bandera 1"></div>
+                                    <div class="flag-slot"><img src="./img/BANDERA2.webp" alt="Bandera 2"></div>
+                                    <div class="flag-slot"><img src="./img/BANDERA3.png" alt="Bandera 3"></div>
+                                    <div class="flag-slot"><img src="./img/BANDERA4.png" alt="Bandera 4"></div>
+                                    <div class="flag-slot"><img src="./img/BANDERA5.png" alt="Bandera 5"></div>
+                                    <div class="flag-slot"><img src="./img/BANDERA6.png" alt="Bandera 6"></div>
+                                </div>
+                            </div>
+                            <div class="hero-card animate__animated animate__fadeInUp" style="animation-delay:0.08s;">
+                                <h3>Nuestra misi&oacute;n</h3>
+                                <img class="hero-card-logo" src="./img/MISION.png" alt="Nuestra misi&oacute;n">
+                                <p>Impulsamos proyectos pol&iacute;ticos con datos, estrategia y gesti&oacute;n territorial para maximizar impacto real.</p>
+                            </div>
+                            <div class="hero-card animate__animated animate__fadeInUp" style="animation-delay:0.12s;">
+                                <h3>C&oacute;mo lo hacemos</h3>
+                                <img class="hero-card-logo" src="./img/COMOLOHACEN.png" alt="C&oacute;mo lo hacemos">
+                                <p>Combinamos an&aacute;lisis, comunicaci&oacute;n y planificaci&oacute;n operativa para construir soluciones efectivas y medibles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-bridge">
+            <h3>Listo para avanzar</h3>
+            <p>Conversemos c&oacute;mo podemos acelerar tus objetivos pol&iacute;ticos y de gesti&oacute;n.</p>
+            <a class="button cta-bridge__btn" href="https://calendly.com/mgottler1999/30min" target="_blank" rel="noopener">Agenda una llamada</a>
+        </div>
+
+        <div class="separator"></div>
+
+        <section id="servicios" class="section">
+            <div class="video-container">
+                <video autoplay muted loop playsinline id="background-video5">
+                    <source src="./video/backgroundvid2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <h2 id="services-title" class="section-title animate__animated">Servicios</h2>
+                    <p id="services-text" class="animate__animated">
+                        Nos especializamos en acompa&ntilde;ar candidatos, partidos y gobiernos con servicios integrales para llegar a m&aacute;s personas y construir proyectos pol&iacute;ticos s&oacute;lidos.
+                    </p>
+                    <div class="service-gallery">
+                        <figure class="service-item animate__animated">
+                            <img src="./img/Asesoramiento en Marketing.jpg" alt="Asesoramiento en Marketing">
+                            <figcaption>
+                                <h3>Asesoramiento en Marketing</h3>
+                                <p>Planificamos y ejecutamos campa&ntilde;as digitales, gestionamos crisis online y potenciamos tu reputaci&oacute;n y presencia en redes.</p>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="service-item animate__animated">
+                            <img src="./img/Asesoramiento Estrategico.jpg" alt="Asesoramiento Estrat&eacute;gico">
+                            <figcaption>
+                                <h3>Asesoramiento Estrat&eacute;gico</h3>
+                                <p>Definimos la estrategia general de campa&ntilde;a, posicionamiento y narrativa para candidatos, partidos o gestiones de gobierno.</p>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="service-item animate__animated">
+                            <img src="./img/Asesoramiento Politico.jpg" alt="Asesoramiento Pol&iacute;tico">
+                            <figcaption>
+                                <h3>Asesoramiento Pol&iacute;tico</h3>
+                                <p>Desarrollamos mensajes, discursos y marcos narrativos claros para conectar con la ciudadan&iacute;a y con tus principales stakeholders.</p>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="service-item animate__animated">
+                            <img src="./img/Asesoramiento en Recursos Humanos.webp" alt="Asesoramiento en Recursos Humanos">
+                            <figcaption>
+                                <h3>Asesoramiento en Recursos Humanos</h3>
+                                <p>Entrenamos equipos y candidatos en comunicaci&oacute;n, vocer&iacute;a y uso de herramientas digitales para la gesti&oacute;n pol&iacute;tica diaria.</p>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="service-item animate__animated">
+                            <img src="./img/Investigacion de opinion Publica.jpg" alt="Investigaci&oacute;n de opini&oacute;n p&uacute;blica">
+                            <figcaption>
+                                <h3>Investigaci&oacute;n de opini&oacute;n p&uacute;blica</h3>
+                                <p>Convertimos datos electorales y de opini&oacute;n p&uacute;blica en insights accionables para decidir con claridad y anticipar escenarios.</p>
+                            </figcaption>
+                        </figure>
+
+                        <figure class="service-item animate__animated">
+                            <img src="./img/Transformacion Digital.webp" alt="Transformaci&oacute;n Digital">
+                            <figcaption>
+                                <h3>Transformaci&oacute;n Digital</h3>
+                                <p>Implementamos automatizaciones e IA para escalar procesos de comunicaci&oacute;n, coordinaci&oacute;n de equipos y gesti&oacute;n territorial.</p>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="separator"></div>
+
+        <section id="problema" class="section">
+            <div class="video-container">
+                <video autoplay muted loop playsinline id="background-video3">
+                    <source src="./video/backgroundvid3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <div class="closing-cta animate__animated">
+                        <div class="closing-cta__content">
+                            <h2 class="closing-cta__title" id="closing-cta-title">
+                                &iquest;Listo para llevar tu proyecto pol&iacute;tico al siguiente nivel?
+                            </h2>
+                            <p id="contact-soon" class="closing-cta__subtitle">
+                                Contanos tu proyecto y en poco tiempo un especialista de GP Consultora Pol&iacute;tica se pondr&aacute; en contacto con vos para definir los pr&oacute;ximos pasos.
+                            </p>
+                            <a role="button"
+                               href="mailto:info@gp.com?subject=Consulta%20sobre%20proyecto%20pol%C3%ADtico&body=Hola,%20me%20gustar%C3%ADa%20contarles%20sobre%20mi%20proyecto%20pol%C3%ADtico%20y%20ver%20c%C3%B3mo%20podemos%20trabajar%20juntos."
+                               class="button closing-cta__btn mailto-dynamic"
+                               id="show-popup">
+                                Contanos tu proyecto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <div class="separator"></div>
+
+        <section id="equipo" class="section">
+            <div class="video-container">
+                <video autoplay muted loop id="background-video6">
+                    <source src="./video/backgroundvid4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <h2 id="team-title" class="section-title animate__animated">Nuestro equipo est&aacute; conformado por:</h2>
+                    <div class="team-details">
+                        <div class="team-card animate__animated">
+                            <h3>Consultores en Estrategia Pol&iacute;tica</h3>
+                            <p>Definen la estrategia general de campa&ntilde;as, posicionamiento y narrativa para candidatos, partidos o gobiernos.</p>
+                        </div>
+                        <div class="team-card animate__animated">
+                            <h3>Analistas Pol&iacute;ticos</h3>
+                            <p>Interpretan el contexto pol&iacute;tico, social y econ&oacute;mico para orientar la toma de decisiones y anticipar escenarios.</p>
+                        </div>
+                        <div class="team-card animate__animated">
+                            <h3>Especialistas en Comunicaci&oacute;n Pol&iacute;tica</h3>
+                            <p>Desarrollan mensajes, discursos y gestionan la comunicaci&oacute;n con medios, ciudadan&iacute;a y actores clave.</p>
+                        </div>
+                        <div class="team-card animate__animated">
+                            <h3>Consultores en Opini&oacute;n P&uacute;blica y Encuestas</h3>
+                            <p>Dise&ntilde;an, ejecutan y analizan encuestas, focus groups y estudios de opini&oacute;n para fundamentar la estrategia.</p>
+                        </div>
+                        <div class="team-card animate__animated">
+                            <h3>Especialistas en Estrategia Digital y Redes Sociales</h3>
+                            <p>Planifican y ejecutan campa&ntilde;as digitales, gestionan crisis online y potencian la reputaci&oacute;n digital.</p>
+                        </div>
+                        <div class="team-card animate__animated">
+                            <h3>Analistas de Datos Pol&iacute;ticos</h3>
+                            <p>Procesan y visualizan datos electorales, sociales y de opini&oacute;n p&uacute;blica para tomar decisiones informadas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<div class="separator"></div>
+
+        <section id="acerca" class="section">
+            <div class="video-container">
+                <video autoplay muted loop playsinline id="background-video4">
+                    <source src="./video/backgroundvid4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay">
+                    <h2 id="about-title" class="section-title animate__animated">&iquest;Busc&aacute;s transformar objetivos pol&iacute;ticos en realidad?</h2>
+                    <p id="about-subtitle" class="why-subtitle animate__animated">
+                        En GP Consultora Pol&iacute;tica comenzamos escuchando, entendiendo tu contexto y tus desaf&iacute;os para dise&ntilde;ar una estrategia alineada con tus objetivos.
+                    </p>
+                    <div class="why-grid">
+                        <div class="why-card animate__animated animate__fadeInUp" style="animation-delay:0.05s;">
+                            <div class="why-icon">✔</div>
+                            <h3 id="why1-title">Diagn&oacute;stico &amp; Contexto</h3>
+                            <p id="why1-text">
+                                Nos sumergimos en tu realidad pol&iacute;tica, social y territorial para comprender qu&eacute; necesit&aacute;s y qu&eacute; est&aacute; pasando alrededor de tu proyecto.
+                            </p>
+                        </div>
+                        <div class="why-card animate__animated animate__fadeInUp" style="animation-delay:0.12s;">
+                            <div class="why-icon">✔</div>
+                            <h3 id="why2-title">Estrategia Integral</h3>
+                            <p id="why2-text">
+                                Combinamos comunicaci&oacute;n, datos, territorio y digital para dise&ntilde;ar una hoja de ruta clara, medible y alineada con tus metas pol&iacute;ticas.
+                            </p>
+                        </div>
+                        <div class="why-card animate__animated animate__fadeInUp" style="animation-delay:0.18s;">
+                            <div class="why-icon">✔</div>
+                            <h3 id="why3-title">Ejecuci&oacute;n &amp; Acompa&ntilde;amiento</h3>
+                            <p id="why3-text">
+                                No solo planificamos: ejecutamos, medimos y ajustamos junto a tu equipo para que tu proyecto no solo funcione, sino que prospere a largo plazo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="section blog-section">
+            <div class="overlay">
+                <div class="blog-header animate__animated">
+                    <p class="blog-kicker" id="blog-kicker">Estrategia &middot; Datos &middot; Comunicaci&oacute;n</p>
+                    <h2 class="section-title" id="blog-title">Conoc&eacute; nuestro blog</h2>
+                    <p class="blog-subtitle" id="blog-subtitle">
+                        An&aacute;lisis, aprendizajes y errores frecuentes en campa&ntilde;as, gesti&oacute;n y comunicaci&oacute;n pol&iacute;tica para ayudarte a tomar mejores decisiones.
+                    </p>
+                    <a class="button" href="blog/index.html">Ver todos los art&iacute;culos</a>
+                </div>
+                <a class="blog-card animate__animated" href="blog-errores-campanas.html">
+                    <div class="blog-card__media">
+                        <img src="./img/ROBOT-IA.png" alt="Errores de campa&ntilde;a que frenan cualquier proyecto pol&iacute;tico" loading="lazy">
+                    </div>
+                    <div class="blog-card__content">
+                        <p class="blog-card__meta" id="blog-meta">Por GP Consultora Pol&iacute;tica &middot; 19/11/2025</p>
+                        <p class="blog-card__eyebrow" id="blog-eyebrow">Art&iacute;culo destacado</p>
+                        <h3 class="blog-card__title" id="blog-article-title">
+                            9 errores de campa&ntilde;a que frenan cualquier proyecto pol&iacute;tico (y c&oacute;mo evitarlos)
+                        </h3>
+                        <p class="blog-card__excerpt" id="blog-excerpt">
+                            En pol&iacute;tica no alcanza con estar presente: hay que estar bien posicionados. Te contamos los errores m&aacute;s comunes que vemos en campa&ntilde;as reales y c&oacute;mo evitarlos con estrategia y datos.
+                        </p>
+                        <div class="blog-stats">
+                            <div class="blog-stat animate__animated">
+                                <p class="blog-stat__number" data-count-prefix="" data-count-target="75" data-count-suffix="%">0%</p>
+                                <p class="blog-stat__label" id="blog-stat1">De las personas juzga la credibilidad por el dise&ntilde;o visual</p>
+                            </div>
+                            <div class="blog-stat animate__animated">
+                                <p class="blog-stat__number" data-count-prefix="+" data-count-target="23" data-count-suffix="%">0%</p>
+                                <p class="blog-stat__label" id="blog-stat2">De mejora en resultados con narrativa consistente</p>
+                            </div>
+                            <div class="blog-stat animate__animated">
+                                <p class="blog-stat__number" data-count-prefix="" data-count-target="65" data-count-suffix="%">0%</p>
+                                <p class="blog-stat__label" id="blog-stat3">De interacci&oacute;n se pierde al comunicar sin objetivo claro</p>
+                            </div>
+                            <div class="blog-stat animate__animated">
+                                <p class="blog-stat__number" data-count-prefix="x" data-count-target="3" data-count-suffix="">0</p>
+                                <p class="blog-stat__label" id="blog-stat4">M&aacute;s alcance con una estrategia de contenidos ordenada</p>
+                            </div>
+                            <div class="blog-stat animate__animated">
+                                <p class="blog-stat__number" data-count-prefix="" data-count-target="88" data-count-suffix="%">0%</p>
+                                <p class="blog-stat__label" id="blog-stat5">No vuelve a un sitio o perfil con mala experiencia</p>
+                            </div>
+                            <div class="blog-stat animate__animated">
+                                <p class="blog-stat__number" data-count-prefix="+" data-count-target="230" data-count-suffix="%">0%</p>
+                                <p class="blog-stat__label" id="blog-stat6">De mejora en conversiones con un llamado a la acci&oacute;n claro</p>
+                            </div>
+                            <div class="blog-stat animate__animated">
+                                <p class="blog-stat__number" data-count-prefix="+" data-count-target="70" data-count-suffix="%">0%</p>
+                                <p class="blog-stat__label" id="blog-stat7">Crecimiento al sostener una inversi&oacute;n estrat&eacute;gica en comunicaci&oacute;n</p>
+                            </div>
+                            <div class="blog-stat animate__animated">
+                                <p class="blog-stat__number" data-count-prefix="" data-count-target="42" data-count-suffix="%">0%</p>
+                                <p class="blog-stat__label" id="blog-stat8">Del esfuerzo se desperdicia por segmentaci&oacute;n y mensaje incorrectos</p>
+                            </div>
+                        </div>
+                        <span class="blog-card__cta" id="blog-cta">Leer art&iacute;culo</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <div class="separator"></div>
+
+        <section id="contact-form" class="contact-form-section">
+            <div class="contact-glow"></div>
+            <div class="contact-shell">
+                <h2 id="contact-title">&iquest;Quer&eacute;s llevar tus objetivos pol&iacute;ticos al siguiente nivel? Dejanos tus datos y nos ponemos en contacto con vos.</h2>
+                <div class="contact-layout">
+                    <div class="contact-card">
+                        <form action="https://formspree.io/f/xyzwvwop" method="POST">
+                            <div class="form-grid">
+                                <div class="form-field">
+                                    <label for="name" id="label-name">Nombre</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-field">
+                                    <label for="company" id="label-company">Partido / Instituci&oacute;n</label>
+                                    <input type="text" id="company" name="company" required>
+                                </div>
+                                <div class="form-field full">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-field full">
+                                    <label for="project" id="label-project">Proyecto</label>
+                                    <textarea id="project" name="project" required></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="button contact-button" id="submit-contact-form">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-inner">
+                <div class="footer-logos">
+                    <img src="./img/google-ads.svg" alt="Google Ads">
+                    <img src="./img/google-partner.svg" alt="Google Partner">
+                    <img src="./img/logofacebookads.png" alt="Facebook Ads">
+                    <img src="./img/cace.svg" alt="CACE">
+                </div>
+                <div class="footer-social-row">
+                    <a href="https://www.linkedin.com/company/trendmakersagency" class="linkedin-button" target="_blank" aria-label="LinkedIn">
+                        <img src="./img/Linkedinlogo.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://www.instagram.com/trendmakers.agency_?igsh=cTN1Z3N0ejk1YmJu" class="instagram-button" target="_blank" aria-label="Instagram">
+                        <img src="./img/INSTAGRAMLOGO.PNG" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+            <p id="footer-text" class="animate__animated">&copy; 2025 GP Consultora Pol&iacute;tica. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/541122549351?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20GP%20Consultora%20Pol%C3%ADtica." class="whatsapp-button" target="_blank">
+      <img src="./img/WPP.PNG" alt="WhatsApp">
+    </a>
+
+    <!-- Botón flotante de Email -->
+    <a href="mailto:info@gp.com?subject=Consulta%20sobre%20consultor%C3%ADa%20pol%C3%ADtica" class="email-button mailto-dynamic" target="_blank">
+        <img src="./img/EMAIL.jpg" alt="Email">
+    </a>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/success_cards.js"></script>
+    <script src="./js/blog_i18n.js"></script>
+    <script>
+        // Toggle quick links from header badge
+        document.addEventListener('DOMContentLoaded', function(){
+            const badge = document.getElementById('tm-badge');
+            const menu = document.getElementById('tm-quick-menu');
+            if (!badge || !menu) return;
+            const closeMenu = () => menu.classList.remove('open');
+            badge.addEventListener('click', (e) => {
+                e.preventDefault();
+                menu.classList.toggle('open');
+            });
+            document.addEventListener('click', (e) => {
+                if (menu.contains(e.target) || badge.contains(e.target)) return;
+                closeMenu();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeMenu();
+            });
+        });
+    </script>
+    <script>
+        // Forzar logos correctos en services cards al cargar (se mantiene por compatibilidad, aunque se usan logo genérico)
+        document.addEventListener('DOMContentLoaded', function() {
+            const marketingLogo = document.querySelector('.service-card[data-service-id="marketing-automation"] img');
+            if (marketingLogo) {
+                marketingLogo.src = './img/logo1.png';
+                marketingLogo.alt = 'An&aacute;lisis de Datos Pol&iacute;ticos';
+            }
+            const brandingLogo = document.querySelector('.service-card[data-service-id="branding-communication"] img');
+            if (brandingLogo) {
+                brandingLogo.src = './img/logo1.png';
+                brandingLogo.alt = 'Asesoramiento Estrat&eacute;gico';
+            }
+            const webLogo = document.querySelector('.service-card[data-service-id="web-ecommerce"] img');
+            if (webLogo) {
+                webLogo.src = './img/logo1.png';
+                webLogo.alt = 'Comunicaci&oacute;n Pol&iacute;tica &amp; Discurso';
+            }
+            const dataLogo = document.querySelector('.service-card[data-service-id="consulting-data-strategy"] img');
+            if (dataLogo) {
+                dataLogo.src = './img/logo1.png';
+                dataLogo.alt = 'Estrategia Digital &amp; Redes Sociales';
+            }
+            const aiLogo = document.querySelector('.service-card[data-service-id="ai-innovation"] img');
+            if (aiLogo) {
+                aiLogo.src = './img/logo1.png';
+                aiLogo.alt = 'Transformaci&oacute;n Digital &amp; IA';
+            }
+        });
+    </script>
+    <script>
+        // Disparar animación del hero cuando sea visible
+        document.addEventListener('DOMContentLoaded', function(){
+            try {
+                const heroImg = document.querySelector('.hero-brain');
+                if (!heroImg || !('IntersectionObserver' in window)) return;
+                const obs = new IntersectionObserver((entries)=>{
+                    entries.forEach(entry=>{
+                        if (entry.isIntersecting) {
+                            heroImg.classList.add('is-visible');
+                            obs.disconnect();
+                        }
+                    });
+                }, { threshold: 0.35, rootMargin: '0px 0px -10% 0px' });
+                obs.observe(heroImg);
+            } catch(e){}
+        });
+
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('nav ul.mobile-menu');
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        }
+        function closeMehttps://www.meta.ai/prompt/933393566516424/nu() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('nav ul.mobile-menu');
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
