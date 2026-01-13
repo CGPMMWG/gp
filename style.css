@@ -357,11 +357,12 @@ nav ul.mobile-menu li {
 /* Nueva grilla de servicios con imagen */
 #servicios .service-gallery {
     display: grid;
-    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
-    max-width: min(1240px, 94vw);
-    margin: 28px auto 0;
-    padding: 6px;
+    width: 100%;
+    max-width: none;
+    margin: 28px 0 0;
+    padding: 6px 0;
 }
 
 #servicios .service-item {
@@ -408,7 +409,7 @@ nav ul.mobile-menu li {
 
 @media (max-width: 960px) {
     #servicios .service-gallery {
-        grid-template-columns: repeat(2, minmax(240px, 1fr));
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
     }
 }
 
@@ -2596,6 +2597,31 @@ h1 {
   margin: 0 auto clamp(24px, 4vw, 32px);
   text-align: center;
   color: var(--color-contrast);
+}
+.blog-header .section-title::after {
+  display: none;
+}
+.blog-all-link {
+  margin-top: clamp(18px, 3vw, 28px);
+  text-align: center;
+}
+.blog-all-link a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-contrast);
+}
+.blog-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 2.5vw, 24px);
+}
+.blog-title-line {
+  flex: 1;
+  height: 1px;
+  max-width: 220px;
+  background: rgba(220, 222, 226, 0.7);
 }
 .blog-kicker {
   letter-spacing: 0.18em;
