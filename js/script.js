@@ -37,15 +37,64 @@ function initMobileServiceCards(){
   } catch (e) { /* noop */ }
 }
 // Snapshot store for restoring original ES content
-if (!window.__i18nOrig) window.__i18nOrig = { snapTaken: false, elems: {}, serviceDetailsHTML: '', teamDetailsHTML: '', detailGridHTML: '' };
+if (!window.__i18nOrig) window.__i18nOrig = {
+  snapTaken: false,
+  elems: {},
+  serviceDetailsHTML: '',
+  teamDetailsHTML: '',
+  detailGridHTML: '',
+  selectorHTML: {},
+  selectorAttrs: {},
+  documentTitle: ''
+};
 const __orig = window.__i18nOrig;
+
+function snapshotSelectorHTML(selector){
+  if (__orig.selectorHTML[selector]) return;
+  const nodes = document.querySelectorAll(selector);
+  if (!nodes.length) return;
+  __orig.selectorHTML[selector] = Array.from(nodes).map((node) => node.innerHTML);
+}
+
+function snapshotSelectorAttr(selector, attr){
+  const key = `${selector}::${attr}`;
+  if (__orig.selectorAttrs[key]) return;
+  const nodes = document.querySelectorAll(selector);
+  if (!nodes.length) return;
+  __orig.selectorAttrs[key] = Array.from(nodes).map((node) => node.getAttribute(attr));
+}
+
+function restoreSelectorHTML(selector){
+  const values = __orig.selectorHTML[selector];
+  if (!values) return;
+  document.querySelectorAll(selector).forEach((node, index) => {
+    if (values[index] !== undefined) node.innerHTML = values[index];
+  });
+}
+
+function restoreSelectorAttr(selector, attr){
+  const key = `${selector}::${attr}`;
+  const values = __orig.selectorAttrs[key];
+  if (!values) return;
+  document.querySelectorAll(selector).forEach((node, index) => {
+    if (values[index] === undefined || values[index] === null) {
+      node.removeAttribute(attr);
+      return;
+    }
+    node.setAttribute(attr, values[index]);
+  });
+}
+
+function isHomeIndexPage(){
+  return !!document.querySelector('#inicio .hero-cards') && !!document.querySelector('#servicios .service-gallery');
+}
 
 function takeI18nSnapshot(){
   if (__orig.snapTaken) return;
     try {
         const ids = [
-            'nav-inicio','nav-acerca','nav-servicios','nav-contacto','nav-contacto-mobile','nav-newsletter','nav-newsletter-mobile','nav-equipo','nav-equipo-mobile','nav-nosotros','nav-nosotros-mobile','nav-casos-exito','nav-problema',
-            'title','subtitle','intro-title','intro-text','about-title','about-text','services-title','services-text','services-portfolio-cta','team-title',
+            'nav-inicio','nav-acerca','nav-servicios','nav-contacto','nav-equipo','nav-equipo-mobile','nav-nosotros','nav-nosotros-mobile','nav-casos-exito','nav-problema',
+            'intro-title','intro-text','about-title','about-text','services-title','services-text','services-portfolio-cta','team-title',
             'contact-title','schedule-call','show-popup','popup-title','label-email','label-problema','submit-button',
             'footer-text','about-us-text','label-name','label-company','label-project','submit-contact-form','contact-soon',
             'closing-cta-title',
@@ -62,72 +111,18 @@ function takeI18nSnapshot(){
         if (svc) __orig.serviceDetailsHTML = svc.innerHTML;
         const team = document.querySelector('.team-details');
         if (team) __orig.teamDetailsHTML = team.innerHTML;
-    const detailGrid = document.querySelector('.detail-grid');
-    if (detailGrid) __orig.detailGridHTML = detailGrid.innerHTML;
-    if (!__orig.home) __orig.home = {};
-    if (!__orig.home.snapTaken) {
-      const heroCards = Array.from(document.querySelectorAll('.hero-card'));
-      if (heroCards.length) {
-        __orig.home.heroCards = heroCards.map((card) => ({
-          title: card.querySelector('h3') ? card.querySelector('h3').innerHTML : '',
-          text: card.querySelector('p') ? card.querySelector('p').innerHTML : ''
-        }));
-      }
-      const heroContact = document.querySelector('.hero-contact-btn');
-      if (heroContact) __orig.home.heroContact = heroContact.innerHTML;
-      const flagImgs = Array.from(document.querySelectorAll('.hero-flags-grid img'));
-      if (flagImgs.length) __orig.home.flagAlts = flagImgs.map((img) => img.getAttribute('alt') || '');
-      const carouselHeading = document.getElementById('cta-carousel-heading');
-      if (carouselHeading) __orig.home.carouselHeading = carouselHeading.innerHTML;
-      const slides = Array.from(document.querySelectorAll('.cta-slide'));
-      if (slides.length) {
-        __orig.home.slides = slides.map((slide) => ({
-          quote: slide.querySelector('.cta-quote p') ? slide.querySelector('.cta-quote p').innerHTML : '',
-          authorHtml: slide.querySelector('.cta-author') ? slide.querySelector('.cta-author').innerHTML : ''
-        }));
-      }
-      const serviceItems = Array.from(document.querySelectorAll('#servicios .service-item'));
-      if (serviceItems.length) {
-        __orig.home.services = serviceItems.map((item) => ({
-          title: item.querySelector('h3') ? item.querySelector('h3').innerHTML : '',
-          text: item.querySelector('p') ? item.querySelector('p').innerHTML : '',
-          cta: item.querySelector('.service-cta') ? item.querySelector('.service-cta').innerHTML : ''
-        }));
-      }
-      const newsletterCards = Array.from(document.querySelectorAll('#blog .newsletter-card'));
-      if (newsletterCards.length) {
-        __orig.home.newsletter = newsletterCards.map((card) => ({
-          meta: card.querySelector('.newsletter-card__meta') ? card.querySelector('.newsletter-card__meta').innerHTML : '',
-          tag: card.querySelector('.newsletter-card__tag') ? card.querySelector('.newsletter-card__tag').innerHTML : '',
-          title: card.querySelector('.newsletter-card__title') ? card.querySelector('.newsletter-card__title').innerHTML : '',
-          desc: card.querySelector('.newsletter-card__desc') ? card.querySelector('.newsletter-card__desc').innerHTML : '',
-          cta: card.querySelector('.newsletter-card__cta') ? card.querySelector('.newsletter-card__cta').innerHTML : ''
-        }));
-      }
-      const blogAll = document.querySelector('#blog .blog-all-link a');
-      if (blogAll) __orig.home.blogAll = blogAll.innerHTML;
-      const contactEmailLabel = document.querySelector('label[for="email"]');
-      if (contactEmailLabel) __orig.home.contactEmailLabel = contactEmailLabel.innerHTML;
-      const footerCols = document.querySelectorAll('footer.footer-new .footer-col');
-      if (footerCols.length >= 4) {
-        __orig.home.footer = {
-          contactHeading: footerCols[0].querySelector('h4') ? footerCols[0].querySelector('h4').innerHTML : '',
-          addressHtml: footerCols[0].querySelectorAll('p')[0] ? footerCols[0].querySelectorAll('p')[0].innerHTML : '',
-          phonesHtml: footerCols[0].querySelectorAll('p')[1] ? footerCols[0].querySelectorAll('p')[1].innerHTML : '',
-          emailHtml: footerCols[0].querySelectorAll('p')[2] ? footerCols[0].querySelectorAll('p')[2].innerHTML : '',
-          linksHeading: footerCols[1].querySelector('h4') ? footerCols[1].querySelector('h4').innerHTML : '',
-          links: Array.from(footerCols[1].querySelectorAll('li a')).map((a) => a.innerHTML),
-          servicesHeading: footerCols[2].querySelector('h4') ? footerCols[2].querySelector('h4').innerHTML : '',
-          services: Array.from(footerCols[2].querySelectorAll('li a')).map((a) => a.innerHTML),
-          newsletterHeading: footerCols[3].querySelector('h4') ? footerCols[3].querySelector('h4').innerHTML : '',
-          newsletterText: footerCols[3].querySelector('p') ? footerCols[3].querySelector('p').innerHTML : '',
-          newsletterPlaceholder: footerCols[3].querySelector('input') ? footerCols[3].querySelector('input').getAttribute('placeholder') || '' : '',
-          newsletterButton: footerCols[3].querySelector('button') ? footerCols[3].querySelector('button').innerHTML : ''
-        };
-      }
-      __orig.home.snapTaken = true;
-    }
-    __orig.snapTaken = true;
+        const detailGrid = document.querySelector('.detail-grid');
+        if (detailGrid) __orig.detailGridHTML = detailGrid.innerHTML;
+        if (isHomeIndexPage()) {
+          if (!__orig.documentTitle) __orig.documentTitle = document.title;
+          Object.keys(HOME_INDEX_I18N.en.html).forEach(snapshotSelectorHTML);
+          Object.keys(HOME_INDEX_I18N.en.attrs).forEach(function(key){
+            const sep = key.lastIndexOf('::');
+            if (sep === -1) return;
+            snapshotSelectorAttr(key.slice(0, sep), key.slice(sep + 2));
+          });
+        }
+        __orig.snapTaken = true;
   } catch(e) { /* noop */ }
 }
 
@@ -269,8 +264,8 @@ const translations = {
         detailBackButton: "? Volver"
     },
     en: {
-        title: "GP Political Consulting",
-        subtitle: "Turning Political Goals into Reality",
+        title: "TrendMakers",
+        subtitle: "Your digital Partner",
         navInicio: "Home",
         navAcerca: "About us",
         navServicios: "Services",
@@ -278,7 +273,7 @@ const translations = {
         navEquipo: "Team",
         navNosotros: "About us",
         navcasosexito: "Success Stories",
-        blogNav: "Newsletter",
+        blogNav: "Blog",
         introTitle: "Welcome to TrendMakers",
         introTagline: "We drive your business growth through marketing, data analysis, automation, and artificial intelligence.",
         introText: "We design and execute personalized, data-driven digital strategies to attract better clients and scale your results.",
@@ -291,22 +286,22 @@ const translations = {
         why2Text: "We integrate marketing, design, AI, and automation to deliver real results.",
         why3Title: "Growth &amp; Optimization",
         why3Text: "We measure, refine, and scale your project to maximize long-term impact.",
-        servicesTitle: "Services",
+        servicesTitle: "Our Services",
         servicesPortfolio: "SOLUTIONS PORTFOLIO",
         successtitle: "Success Stories",
         successIntro: "Some of our success stories:",
         successCase1: "Prontoled: We directly impacted revenue with the implementation of AI automations, ad management, and the execution of a comprehensive market plan that led to an action plan.",
         successCase2: "Letratec: We increased revenue by 37% with the implementation of a digital marketing plan, the creation of a website, and lead management.",
         successCase3: "VcG Imagen: We automated lead nurturing and optimized performance media to double the qualified lead conversion rate in just 60 days.",
-        servicesText: "We specialize in supporting candidates, parties, and governments with comprehensive services to reach more people and build solid political projects.",
-        closingCtaTitle: "Ready to Take Your Political Project to the Next Level?",
-        blogKicker: "Strategy &middot; Vote &middot; 2025",
-        blogTitle: "Discover Our Newsletter",
-        blogSubtitle: "",
-        blogMeta: "Strategy &middot; Vote &middot; 2025",
-        blogEyebrow: "Featured Edition",
-        blogArticleTitle: "Social Fragmentation and the End of Stable Majorities",
-        blogExcerpt: "The electorate is breaking into layers with overlapping demands. Competing requires reading local tensions, coordinating micro-segments, and sustaining a narrative that brings order to diversity.",
+        servicesText: "Click on the cards to view more information about our services and learn how we can help you grow your business.",
+        closingCtaTitle: "Ready to take your brand to the next level",
+        blogKicker: "Marketing &middot; Data &middot; Automation",
+        blogTitle: "Explore our blog",
+        blogSubtitle: "Learn the most common mistakes from our specialists and how to avoid them with data and automation.",
+        blogMeta: "By TrendMakers &middot; Nov 19, 2025",
+        blogEyebrow: "Featured article",
+        blogArticleTitle: "9 marketing mistakes that slow any business (and how to avoid them)",
+        blogExcerpt: "In a saturated market, the difference isn't publishing more but doing it strategically. See the 9 mistakes we find in real businesses and how to avoid them.",
         blogCta: "Read article",
         blogStat1: "Of users judge credibility by visual design",
         blogStat2: "Revenue uplift from a consistent identity",
@@ -319,12 +314,12 @@ const translations = {
         teamTitle: "Our team consists of:",
         contactTitle: "Schedule a 1-on-1 Call",
         scheduleCall: "Schedule a Call",
-        problemaButton: "Tell Us About Your Project",
-        popupTitle: "Tell Us About Your Project",
+        problemaButton: "I'm ready!",
+        popupTitle: "I'm ready!",
         labelEmail: "Email:",
         labelProblema: "Project:",
         submitButton: "Send",
-    footerText: "&copy; 2025 GP Political Consulting. All rights reserved.",    
+    footerText: "&copy; 2023 TrendMakers. All rights reserved.",    
     teamDetails: `
             <div class="team-card">
                 <h3>Marketing Consultants</h3>
@@ -361,12 +356,12 @@ const translations = {
         `,
         contactTitle: "Schedule a 1-on-1 Call",
         scheduleCall: "Schedule a Call",
-        problemaButton: "Tell Us About Your Project",
-        popupTitle: "Tell Us About Your Project",
+        problemaButton: "I'm ready!",
+        popupTitle: "I'm ready!",
         labelEmail: "Email:",
         labelProblema: "Project:",
         submitButton: "Submit",
-        footerText: "&copy; 2025 GP Political Consulting. All rights reserved.",    
+        footerText: "&copy; 2023 TrendMakers. All rights reserved.",    
         aboutUsText: "We are a global marketing agency dedicated to providing excellent services to clients all over the world. With a team of experts in various areas of digital marketing, we specialize in creating personalized strategies that cater to the specific needs of each business. Our mission is to drive growth and success for our clients through innovative and effective solutions. From social media management to the development of comprehensive advertising campaigns, we are committed to excellence and customer satisfaction in every project we undertake.",
         serviceDetails: `
             <a class="service-card animate__animated" href="marketing-automation.html?lang=en" data-service-id="marketing-automation">
@@ -395,12 +390,12 @@ const translations = {
                 <p>We implement AI and automations to improve processes and build competitive advantage.</p>
             </a>
         `,
-        contactFormTitle: "Want to Take Your Political Goals to the Next Level? Leave us your details and we'll get in touch.",
-        labelName: "Name",
-        labelCompany: "Party / Institution",
-        labelProject: "Project",
+        contactFormTitle: "Need help with digital marketing TrendMakers is your solution",
+        labelName: "Name:",
+        labelCompany: "Company:",
+        labelProject: "Project:",
         submitContactForm: "Submit",
-    contactSoon: "Tell us about your project and a GP Political Consulting specialist will contact you shortly to define the next steps.",
+    contactSoon: "Our team will reach out to you shortly to discuss the details of your project.",
         detailHeroTitle: "Our Services in Detail",
         detailHeroText: "Explore every solution we use to accelerate your business results. This page only opens from the service cards so you can focus on the offer that matters most to you.",
         detailBackLink: "Back to the cards",
@@ -491,343 +486,190 @@ const translations = {
     }
 };
 
-const homeTranslations = {
+const HOME_INDEX_I18N = {
   en: {
-    hero: {
-      contactButton: "Contact",
-      missionTitle: "Our Mission",
-      missionText: "We drive political projects through data, strategy, and territorial management to maximize real-world impact.",
-      howTitle: "How We Do It",
-      howText: "We combine analysis, communication, and operational planning to build effective and measurable solutions.",
-      marketsTitle: "Our team has experience in the following markets:",
-      flagAlts: ["Flag 1","Flag 2","Flag 3","Flag 4","Flag 5","Flag 6"]
-    },
-    carousel: {
-      heading: "Quotes on Strategy and Politics",
-      slides: [
-        {
-          quote: "Politics is a competition of organization, not of good intentions.",
-          author: "Napoleon Bonaparte",
-          role: "Emperor and military strategist"
-        },
-        {
-          quote: "Effective leadership is the ability to turn strategy into victory.",
-          author: "Winston Churchill",
-          role: "Prime Minister of the United Kingdom"
-        },
-        {
-          quote: "Victory belongs to those who prepare better, not to those who improvise.",
-          author: "Sun Tzu",
-          role: "Military strategist"
-        },
-        {
-          quote: "In politics, winning is not enough: you must win while controlling the scenario.",
-          author: "Henry Kissinger",
-          role: "Political strategist"
-        },
-        {
-          quote: "Every political victory is a combination of data, narrative, and discipline.",
-          author: "Barack Obama",
-          role: "President of the United States"
-        },
-        {
-          quote: "Strategy does not guarantee victory, but without strategy defeat is certain.",
-          author: "Carl von Clausewitz",
-          role: "Strategic theorist"
-        },
-        {
-          quote: "Those who control the message control the contest.",
-          author: "Walter Lippmann",
-          role: "Political analyst"
-        },
-        {
-          quote: "Elections are not decided on election day, but in the months leading up to it.",
-          author: "James Carville",
-          role: "Electoral strategist"
-        },
-        {
-          quote: "The winner is not the one who speaks the loudest, but the one who understands the electorate best.",
-          author: "David Axelrod",
-          role: "Political consultant"
-        }
-      ]
-    },
-    services: {
-      cards: [
-        {
-          title: "Marketing Advisory",
-          text: "We plan and execute digital campaigns, managing your positioning to strengthen your presence on social media.",
-          cta: "Explore service"
-        },
-        {
-          title: "Strategic Consulting",
-          text: "We define the comprehensive strategy of your project through a clear narrative and well-defined processes.",
-          cta: "Explore service"
-        },
-        {
-          title: "Public Opinion Research",
-          text: "We turn electoral and public opinion data into actionable insights to make clear decisions and anticipate scenarios.",
-          cta: "Explore service"
-        }
-      ]
-    },
-    newsletter: {
-      cards: [
-        {
-          metaHtml: "Strategy &middot; Vote &middot; 2025",
-          tag: "Featured Edition",
-          title: "Social Fragmentation and the End of Stable Majorities",
-          desc: "The electorate is breaking into layers with overlapping demands. Competing requires reading local tensions, coordinating micro-segments, and sustaining a narrative that brings order to diversity.",
-          cta: "Read article"
-        },
-        {
-          metaHtml: "Government &middot; Crisis &middot; 2025",
-          title: "Governing Without Margin: Unpopular Decisions in Critical Contexts",
-          desc: "When there is no good news, the challenge is to sustain legitimacy through clarity, presence, and strategy to manage political costs.",
-          cta: "Read article"
-        },
-        {
-          metaHtml: "Ecosystem &middot; Voter &middot; 2025",
-          title: "Outsiders on the Rise: How They Reshape the Political Landscape",
-          desc: "New dynamics in an environment of distrust. Why candidates outside traditional parties capture attention and votes: what they see, interpret, and execute better than classic structures. The new voter, institutional rupture, and the transformation of the game.",
-          cta: "Read article"
-        }
+    documentTitle: 'GP Political Consulting',
+    html: {
+      '#title': ['GP Political Consulting'],
+      '#subtitle': ['Turning political goals into reality'],
+      '.hero-contact-btn': ['Contact'],
+      '.lang-toggle .lang-label': ['EN'],
+      '.desktop-menu #nav-inicio': ['Home'],
+      '.mobile-menu #nav-inicio': ['Home'],
+      '.desktop-menu #nav-servicios': ['Services'],
+      '.mobile-menu #nav-servicios': ['Services'],
+      '.desktop-menu #nav-newsletter': ['Newsletter'],
+      '.mobile-menu #nav-newsletter-mobile': ['Newsletter'],
+      '.desktop-menu #nav-contacto': ['Contact'],
+      '.mobile-menu #nav-contacto-mobile': ['Contact'],
+      '#inicio .hero-card h3': [
+        'Our mission',
+        'How we do it',
+        'Our team has experience in the following markets:'
       ],
-      viewAll: "View all articles"
+      '#inicio .hero-card:not(.hero-flags) p': [
+        'We support political projects with data, strategy, and territorial management to maximize real-world impact.',
+        'We combine analysis, communication, and operational planning to build effective, measurable solutions.'
+      ],
+      '#cta-carousel-heading': ['Quotes about strategy and politics'],
+      '.cta-carousel .cta-slide .cta-quote p': [
+        '&quot;Politics is a competition of organization, not good intentions.&quot;',
+        '&quot;Effective leadership is the one that turns strategy into victory.&quot;',
+        '&quot;Victory belongs to those who prepare better, not to those who improvise.&quot;',
+        '&quot;In politics, winning is not enough: you must win while controlling the stage.&quot;',
+        '&quot;Every political victory is a combination of data, narrative, and discipline.&quot;',
+        '&quot;Strategy does not guarantee victory, but without strategy defeat is certain.&quot;',
+        '&quot;Whoever masters the message, masters the contest.&quot;',
+        '&quot;Elections are not decided on voting day, but in the months before it.&quot;',
+        '&quot;The winner is not the one who speaks louder, but the one who understands the electorate better.&quot;'
+      ],
+      '.cta-carousel .cta-slide .cta-author-role': [
+        'Emperor and military strategist',
+        'Prime Minister of the United Kingdom',
+        'Military strategist',
+        'Political strategist',
+        'President of the United States',
+        'Strategy theorist',
+        'Political analyst',
+        'Electoral strategist',
+        'Political consultant'
+      ],
+      '#services-title': ['Services'],
+      '#services-text': ['We specialize in supporting candidates, parties, and governments with end-to-end services to reach more people and build solid political projects.'],
+      '#servicios .service-item h3': [
+        'Marketing Advisory',
+        'Strategic Consulting',
+        'Public Opinion Research'
+      ],
+      '#servicios .service-item figcaption p': [
+        'We plan and execute digital campaigns and manage your public positioning to strengthen your presence across platforms.',
+        'We define the overall strategy of your project through a clear narrative and well-structured processes.',
+        'We turn electoral and public opinion data into actionable insights to make clearer decisions and anticipate scenarios.'
+      ],
+      '#servicios .service-item .service-cta': [
+        'Explore service',
+        'Explore service',
+        'Explore service'
+      ],
+      '#closing-cta-title': ['Ready to take your political project to the next level?'],
+      '#contact-soon': ['Tell us about your project and a GP Political Consulting specialist will contact you shortly to define the next steps.'],
+      '#show-popup': ['Tell us about your project'],
+      '#blog-title': ['Explore our newsletter'],
+      '.newsletter-card__meta': [
+        'Strategy &middot; Vote &middot; 2025',
+        'Government &middot; Crisis &middot; 2025',
+        'Ecosystem &middot; Voter &middot; 2025'
+      ],
+      '.newsletter-card__tag': ['Featured edition'],
+      '.newsletter-card__title': [
+        'Social fragmentation and the end of stable majorities',
+        'Governing without room to spare: unpopular decisions in critical contexts',
+        'Outsiders on the rise: how they are reshaping the political landscape'
+      ],
+      '.newsletter-card__desc': [
+        'The electorate is fragmenting into layers with overlapping demands. Competing now requires reading local tensions, coordinating microsegments, and sustaining a narrative that brings order to diversity.',
+        'When there is no good news, the challenge is to preserve legitimacy through clarity, presence, and strategy to manage political costs.',
+        'New dynamics are emerging in an environment of distrust. Why candidates outside traditional parties capture attention and votes: what they see, interpret, and execute better than traditional structures. The new voter, institutional rupture, and the transformation of the game.'
+      ],
+      '.newsletter-card__cta': [
+        'Read article',
+        'Read article',
+        'Read article'
+      ],
+      '.blog-all-link a': ['View all articles'],
+      '#contact-title': ['Want to take your political goals to the next level? Leave us your details and we will get in touch.'],
+      '#label-name': ['Name'],
+      '#label-company': ['Party / Institution'],
+      '#label-project': ['Project'],
+      '#submit-contact-form': ['Send'],
+      '.footer-col h4': ['Contact', 'Useful links', 'Services', 'Newsletter'],
+      'footer .footer-col:nth-child(1) p': [
+        '<strong>Address:</strong> Av. Rivadavia 1725, CABA',
+        '<strong>Phone:</strong> 54 11 554746300<br>54 9 2325457856',
+        '<strong>Email:</strong> contacto@gp.com'
+      ],
+      'footer .footer-col:nth-child(2) li a': ['Home', 'Newsletter', 'Services'],
+      'footer .footer-col:nth-child(3) li a': [
+        'Marketing Advisory',
+        'Strategic Consulting',
+        'Public Opinion Research'
+      ],
+      'footer .footer-col:nth-child(4) p': ['Subscribe to receive updates and strategic resources.'],
+      '.footer-newsletter button': ['Send'],
+      '#footer-text': ['&copy; 2025 GP Political Consulting. All rights reserved.']
     },
-    contactForm: {
-      emailLabel: "Email"
-    },
-    footer: {
-      contactHeading: "Contact",
-      addressHtml: "<strong>Address:</strong> Av. Rivadavia 1725, CABA",
-      phonesHtml: "<strong>Phone numbers:</strong> +54 11 5547 46300<br>+54 9 2325 457856",
-      emailHtml: "<strong>Email:</strong> contacto@gp.com",
-      linksHeading: "Useful Links",
-      links: ["Home","Newsletter","Services"],
-      servicesHeading: "Services",
-      services: ["Marketing Advisory","Strategic Consulting","Public Opinion Research"],
-      newsletterHeading: "Newsletter",
-      newsletterText: "Subscribe to receive updates and strategic resources.",
-      newsletterPlaceholder: "Email address",
-      newsletterButton: "Submit"
+    attrs: {
+      '.language-selector::aria-label': ['Language selector'],
+      '.lang-toggle::aria-label': ['Select language'],
+      '.lang-menu::aria-label': ['Languages'],
+      '.scroll-indicator::aria-label': ['Go to the first section'],
+      '#inicio .hero-card-logo::alt': ['Our mission', 'How we do it'],
+      '#servicios .service-item a::aria-label': [
+        'View Marketing Advisory',
+        'View Strategic Consulting',
+        'View Public Opinion Research'
+      ],
+      '#servicios .service-item img::alt': [
+        'Marketing Advisory',
+        'Strategic Consulting',
+        'Public Opinion Research'
+      ],
+      '.newsletter-card__img img::alt': [
+        'Social fragmentation',
+        'Governing without room to spare',
+        'Outsiders on the rise'
+      ],
+      '.footer-newsletter input::placeholder': ['Email address']
     }
   }
 };
 
-function restoreHomeCopy(){
-  const home = __orig.home;
-  if (!home || !home.snapTaken) return;
-  try {
-    const heroCards = Array.from(document.querySelectorAll('.hero-card'));
-    if (home.heroCards && heroCards.length) {
-      heroCards.forEach((card, idx) => {
-        const snap = home.heroCards[idx];
-        if (!snap) return;
-        const title = card.querySelector('h3');
-        const text = card.querySelector('p');
-        if (title) title.innerHTML = snap.title || '';
-        if (text && snap.text !== undefined) text.innerHTML = snap.text || '';
-      });
-    }
-    const heroContact = document.querySelector('.hero-contact-btn');
-    if (heroContact && home.heroContact !== undefined) heroContact.innerHTML = home.heroContact;
-    const flagImgs = Array.from(document.querySelectorAll('.hero-flags-grid img'));
-    if (home.flagAlts && flagImgs.length) {
-      flagImgs.forEach((img, idx) => {
-        if (home.flagAlts[idx] !== undefined) img.setAttribute('alt', home.flagAlts[idx]);
-      });
-    }
-    const carouselHeading = document.getElementById('cta-carousel-heading');
-    if (carouselHeading && home.carouselHeading !== undefined) carouselHeading.innerHTML = home.carouselHeading;
-    const slides = Array.from(document.querySelectorAll('.cta-slide'));
-    if (home.slides && slides.length) {
-      slides.forEach((slide, idx) => {
-        const snap = home.slides[idx];
-        if (!snap) return;
-        const quote = slide.querySelector('.cta-quote p');
-        const author = slide.querySelector('.cta-author');
-        if (quote) quote.innerHTML = snap.quote || '';
-        if (author) author.innerHTML = snap.authorHtml || '';
-      });
-    }
-    const serviceItems = Array.from(document.querySelectorAll('#servicios .service-item'));
-    if (home.services && serviceItems.length) {
-      serviceItems.forEach((item, idx) => {
-        const snap = home.services[idx];
-        if (!snap) return;
-        const title = item.querySelector('h3');
-        const text = item.querySelector('p');
-        const cta = item.querySelector('.service-cta');
-        if (title) title.innerHTML = snap.title || '';
-        if (text) text.innerHTML = snap.text || '';
-        if (cta) cta.innerHTML = snap.cta || '';
-      });
-    }
-    const newsletterCards = Array.from(document.querySelectorAll('#blog .newsletter-card'));
-    if (home.newsletter && newsletterCards.length) {
-      newsletterCards.forEach((card, idx) => {
-        const snap = home.newsletter[idx];
-        if (!snap) return;
-        const meta = card.querySelector('.newsletter-card__meta');
-        const tag = card.querySelector('.newsletter-card__tag');
-        const title = card.querySelector('.newsletter-card__title');
-        const desc = card.querySelector('.newsletter-card__desc');
-        const cta = card.querySelector('.newsletter-card__cta');
-        if (meta) meta.innerHTML = snap.meta || '';
-        if (tag && snap.tag !== undefined) tag.innerHTML = snap.tag || '';
-        if (title) title.innerHTML = snap.title || '';
-        if (desc) desc.innerHTML = snap.desc || '';
-        if (cta) cta.innerHTML = snap.cta || '';
-      });
-    }
-    const blogAll = document.querySelector('#blog .blog-all-link a');
-    if (blogAll && home.blogAll !== undefined) blogAll.innerHTML = home.blogAll;
-    const contactEmailLabel = document.querySelector('label[for=\"email\"]');
-    if (contactEmailLabel && home.contactEmailLabel !== undefined) contactEmailLabel.innerHTML = home.contactEmailLabel;
-    const footerCols = document.querySelectorAll('footer.footer-new .footer-col');
-    if (home.footer && footerCols.length >= 4) {
-      const contactHeading = footerCols[0].querySelector('h4');
-      const address = footerCols[0].querySelectorAll('p')[0];
-      const phones = footerCols[0].querySelectorAll('p')[1];
-      const email = footerCols[0].querySelectorAll('p')[2];
-      if (contactHeading) contactHeading.innerHTML = home.footer.contactHeading || '';
-      if (address) address.innerHTML = home.footer.addressHtml || '';
-      if (phones) phones.innerHTML = home.footer.phonesHtml || '';
-      if (email) email.innerHTML = home.footer.emailHtml || '';
-      const linksHeading = footerCols[1].querySelector('h4');
-      if (linksHeading) linksHeading.innerHTML = home.footer.linksHeading || '';
-      const links = footerCols[1].querySelectorAll('li a');
-      if (home.footer.links) links.forEach((a, idx) => { if (home.footer.links[idx] !== undefined) a.innerHTML = home.footer.links[idx]; });
-      const servicesHeading = footerCols[2].querySelector('h4');
-      if (servicesHeading) servicesHeading.innerHTML = home.footer.servicesHeading || '';
-      const services = footerCols[2].querySelectorAll('li a');
-      if (home.footer.services) services.forEach((a, idx) => { if (home.footer.services[idx] !== undefined) a.innerHTML = home.footer.services[idx]; });
-      const newsletterHeading = footerCols[3].querySelector('h4');
-      const newsletterText = footerCols[3].querySelector('p');
-      const newsletterInput = footerCols[3].querySelector('input');
-      const newsletterButton = footerCols[3].querySelector('button');
-      if (newsletterHeading) newsletterHeading.innerHTML = home.footer.newsletterHeading || '';
-      if (newsletterText) newsletterText.innerHTML = home.footer.newsletterText || '';
-      if (newsletterInput && home.footer.newsletterPlaceholder !== undefined) {
-        newsletterInput.setAttribute('placeholder', home.footer.newsletterPlaceholder);
-      }
-      if (newsletterButton) newsletterButton.innerHTML = home.footer.newsletterButton || '';
-    }
-  } catch(e) { /* noop */ }
-}
+function applyHomeIndexTranslations(language){
+  if (!isHomeIndexPage()) return;
+  takeI18nSnapshot();
 
-function applyHomeCopy(language){
-  const home = homeTranslations[language];
-  if (!home) return;
-  try {
-    const heroCards = Array.from(document.querySelectorAll('.hero-card'));
-    if (heroCards.length >= 2) {
-      const mission = heroCards[0];
-      const how = heroCards[1];
-      const markets = heroCards[2];
-      const missionTitle = mission.querySelector('h3');
-      const missionText = mission.querySelector('p');
-      const howTitle = how.querySelector('h3');
-      const howText = how.querySelector('p');
-      const marketsTitle = markets ? markets.querySelector('h3') : null;
-      if (missionTitle) missionTitle.textContent = home.hero.missionTitle;
-      if (missionText) missionText.textContent = home.hero.missionText;
-      if (howTitle) howTitle.textContent = home.hero.howTitle;
-      if (howText) howText.textContent = home.hero.howText;
-      if (marketsTitle) marketsTitle.textContent = home.hero.marketsTitle;
-    }
-    const heroContact = document.querySelector('.hero-contact-btn');
-    if (heroContact) heroContact.textContent = home.hero.contactButton;
-    const flagImgs = Array.from(document.querySelectorAll('.hero-flags-grid img'));
-    if (flagImgs.length) {
-      flagImgs.forEach((img, idx) => {
-        if (home.hero.flagAlts[idx]) img.setAttribute('alt', home.hero.flagAlts[idx]);
-      });
-    }
-    const carouselHeading = document.getElementById('cta-carousel-heading');
-    if (carouselHeading) carouselHeading.textContent = home.carousel.heading;
-    const slides = Array.from(document.querySelectorAll('.cta-slide'));
-    if (slides.length) {
-      slides.forEach((slide, idx) => {
-        const data = home.carousel.slides[idx];
-        if (!data) return;
-        const quote = slide.querySelector('.cta-quote p');
-        const author = slide.querySelector('.cta-author');
-        if (quote) quote.textContent = '\"' + data.quote + '\"';
-        if (author) author.innerHTML = data.author + ' <span class=\"cta-author-role\">' + data.role + '</span>';
-      });
-    }
-    const serviceItems = Array.from(document.querySelectorAll('#servicios .service-item'));
-    if (serviceItems.length) {
-      serviceItems.forEach((item, idx) => {
-        const data = home.services.cards[idx];
-        if (!data) return;
-        const title = item.querySelector('h3');
-        const text = item.querySelector('p');
-        const cta = item.querySelector('.service-cta');
-        if (title) title.textContent = data.title;
-        if (text) text.textContent = data.text;
-        if (cta) cta.textContent = data.cta;
-      });
-    }
-    const newsletterCards = Array.from(document.querySelectorAll('#blog .newsletter-card'));
-    if (newsletterCards.length) {
-      newsletterCards.forEach((card, idx) => {
-        const data = home.newsletter.cards[idx];
-        if (!data) return;
-        const meta = card.querySelector('.newsletter-card__meta');
-        const tag = card.querySelector('.newsletter-card__tag');
-        const title = card.querySelector('.newsletter-card__title');
-        const desc = card.querySelector('.newsletter-card__desc');
-        const cta = card.querySelector('.newsletter-card__cta');
-        if (meta) meta.innerHTML = data.metaHtml;
-        if (tag && data.tag !== undefined) tag.textContent = data.tag;
-        if (title) title.textContent = data.title;
-        if (desc) desc.textContent = data.desc;
-        if (cta) cta.textContent = data.cta;
-      });
-    }
-    const blogAll = document.querySelector('#blog .blog-all-link a');
-    if (blogAll) blogAll.textContent = home.newsletter.viewAll;
-    const contactEmailLabel = document.querySelector('label[for=\"email\"]');
-    if (contactEmailLabel) contactEmailLabel.textContent = home.contactForm.emailLabel;
-    const footerCols = document.querySelectorAll('footer.footer-new .footer-col');
-    if (footerCols.length >= 4) {
-      const contactHeading = footerCols[0].querySelector('h4');
-      const address = footerCols[0].querySelectorAll('p')[0];
-      const phones = footerCols[0].querySelectorAll('p')[1];
-      const email = footerCols[0].querySelectorAll('p')[2];
-      if (contactHeading) contactHeading.textContent = home.footer.contactHeading;
-      if (address) address.innerHTML = home.footer.addressHtml;
-      if (phones) phones.innerHTML = home.footer.phonesHtml;
-      if (email) email.innerHTML = home.footer.emailHtml;
-      const linksHeading = footerCols[1].querySelector('h4');
-      if (linksHeading) linksHeading.textContent = home.footer.linksHeading;
-      const links = footerCols[1].querySelectorAll('li a');
-      links.forEach((a, idx) => { if (home.footer.links[idx]) a.textContent = home.footer.links[idx]; });
-      const servicesHeading = footerCols[2].querySelector('h4');
-      if (servicesHeading) servicesHeading.textContent = home.footer.servicesHeading;
-      const services = footerCols[2].querySelectorAll('li a');
-      services.forEach((a, idx) => { if (home.footer.services[idx]) a.textContent = home.footer.services[idx]; });
-      const newsletterHeading = footerCols[3].querySelector('h4');
-      const newsletterText = footerCols[3].querySelector('p');
-      const newsletterInput = footerCols[3].querySelector('input');
-      const newsletterButton = footerCols[3].querySelector('button');
-      if (newsletterHeading) newsletterHeading.textContent = home.footer.newsletterHeading;
-      if (newsletterText) newsletterText.textContent = home.footer.newsletterText;
-      if (newsletterInput) newsletterInput.setAttribute('placeholder', home.footer.newsletterPlaceholder);
-      if (newsletterButton) newsletterButton.textContent = home.footer.newsletterButton;
-    }
-  } catch(e) { /* noop */ }
+  if (language === 'es') {
+    if (__orig.documentTitle) document.title = __orig.documentTitle;
+    Object.keys(HOME_INDEX_I18N.en.html).forEach(restoreSelectorHTML);
+    Object.keys(HOME_INDEX_I18N.en.attrs).forEach(function(key){
+      const sep = key.lastIndexOf('::');
+      if (sep === -1) return;
+      restoreSelectorAttr(key.slice(0, sep), key.slice(sep + 2));
+    });
+    return;
+  }
+
+  const pack = HOME_INDEX_I18N[language];
+  if (!pack) return;
+
+  if (pack.documentTitle) document.title = pack.documentTitle;
+  Object.keys(pack.html).forEach(function(selector){
+    const values = pack.html[selector];
+    document.querySelectorAll(selector).forEach((node, index) => {
+      if (values[index] !== undefined) node.innerHTML = values[index];
+    });
+  });
+  Object.keys(pack.attrs).forEach(function(key){
+    const sep = key.lastIndexOf('::');
+    if (sep === -1) return;
+    const selector = key.slice(0, sep);
+    const attr = key.slice(sep + 2);
+    const values = pack.attrs[key];
+    document.querySelectorAll(selector).forEach((node, index) => {
+      if (values[index] !== undefined) node.setAttribute(attr, values[index]);
+    });
+  });
 }
 
 // Dynamic mailto builder by language
-const MAILTO_ES = `mailto:info@gp.com?subject=${encodeURIComponent('Consulta sobre consultoria politica')}&body=${encodeURIComponent('Hola, como estan? Me gustaria recibir informacion adicional sobre sus servicios de consultoria politica. Muchas gracias.')}`;
-const MAILTO_EN = `mailto:info@gp.com?subject=${encodeURIComponent('Request for Information About Political Consulting')}&body=${encodeURIComponent("Hi, hope you're doing well. I'd like to receive additional information about your political consulting services. Thank you.")}`;
+const MAILTO_ES = `mailto:info@trendmakers.agency?subject=${encodeURIComponent('Solicitud de información sobre sus servicios')}&body=${encodeURIComponent('Hola, ¿cómo están? Me gustaría recibir información adicional sobre los servicios que ofrecen. Muchas gracias.')}`;
+const MAILTO_EN = `mailto:info@trendmakers.agency?subject=${encodeURIComponent('Request for Information About Your Services')}&body=${encodeURIComponent("Hi, hope you're doing well. I’d like to receive additional information about the services you offer. Thank you.")}`;
+
+const MAILTO_ES_GP = `mailto:info@gp.com?subject=${encodeURIComponent('Consulta sobre consultoria politica')}&body=${encodeURIComponent('Hola, me gustaria recibir mas informacion sobre sus servicios de consultoria politica. Muchas gracias.')}`;
+const MAILTO_EN_GP = `mailto:info@gp.com?subject=${encodeURIComponent('Inquiry about political consulting')}&body=${encodeURIComponent('Hello, I would like to receive more information about your political consulting services. Thank you.')}`;
 
 function applyMailtoLinks(lang){
-  const href = (lang === 'en') ? MAILTO_EN : MAILTO_ES;
+  const href = (lang === 'en') ? MAILTO_EN_GP : MAILTO_ES_GP;
   document.querySelectorAll('.mailto-dynamic').forEach((a)=>{
     a.setAttribute('href', href);
   });
@@ -862,6 +704,31 @@ function getLanguagePreference() {
 }
 function updateDocumentLanguageAttr(lang) {
     try { document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'es'); } catch (e) { /* noop */ }
+}
+function updateLanguageToggleUI(lang) {
+    try {
+        var toggle = document.querySelector('nav .language-selector .lang-toggle');
+        if (!toggle) return;
+
+        var label = toggle.querySelector('.lang-label');
+        if (!label) {
+            label = document.createElement('span');
+            label.className = 'lang-label';
+            toggle.insertBefore(label, toggle.firstChild);
+        }
+        label.textContent = (lang === 'en') ? 'EN' : 'ES';
+
+        var caret = toggle.querySelector('.lang-caret');
+        if (!caret) {
+            caret = document.createElement('span');
+            caret.className = 'lang-caret';
+            caret.textContent = 'v';
+            toggle.appendChild(caret);
+        }
+
+        var img = toggle.querySelector('img');
+        if (img) img.style.display = 'none';
+    } catch (e) { /* noop */ }
 }
 function getRequestedLanguage() {
     try {
@@ -985,9 +852,7 @@ function setLanguage(language) {
             // Restore nav duplicates (desktop and mobile) using snapshot
             const navMap = [
               ['#nav-inicio','nav-inicio'],['#nav-acerca','nav-acerca'],['#nav-servicios','nav-servicios'],
-              ['#nav-contacto','nav-contacto'],['#nav-contacto-mobile','nav-contacto-mobile'],
-              ['#nav-newsletter','nav-newsletter'],['#nav-newsletter-mobile','nav-newsletter-mobile'],
-              ['#nav-equipo','nav-equipo'],['#nav-casos-exito','nav-casos-exito'],
+              ['#nav-contacto','nav-contacto'],['#nav-equipo','nav-equipo'],['#nav-casos-exito','nav-casos-exito'],
               ['#nav-problema','nav-problema']
             ];
             navMap.forEach(function([sel,idKey]){
@@ -999,7 +864,6 @@ function setLanguage(language) {
                 if (mobile) mobile.innerHTML = val;
               }
             });
-            restoreHomeCopy();
             setServiceCardLogos();
             // Ensure restored ES service/team cards are visible
             try {
@@ -1010,9 +874,12 @@ function setLanguage(language) {
             // Rebind interactions after DOM restore
             initMobileServiceCards();
         } catch (e) { /* noop */ }
+        applyHomeIndexTranslations('es');
         setupScrollAnimations(true);
         saveLanguagePreference('es');
         updateDocumentLanguageAttr('es');
+        updateLanguageToggleUI('es');
+        applyMailtoLinks('es');
         return;
     }
     // Apply EN (or other) translations
@@ -1023,9 +890,6 @@ function setLanguage(language) {
         'nav-acerca': 'navAcerca',
         'nav-servicios': 'navServicios',
         'nav-contacto': 'navContacto',
-        'nav-contacto-mobile': 'navContacto',
-        'nav-newsletter': 'blogNav',
-        'nav-newsletter-mobile': 'blogNav',
         'nav-equipo': 'navEquipo',
         'nav-equipo-mobile': 'navEquipo',
         'nav-nosotros': 'navNosotros',
@@ -1128,11 +992,10 @@ function setLanguage(language) {
     // Update nav (desktop and mobile duplicates)
     const navMap = [
       ['#nav-inicio','navInicio'],['#nav-acerca','navAcerca'],['#nav-servicios','navServicios'],
-      ['#nav-contacto','navContacto'],['#nav-contacto-mobile','navContacto'],['#nav-equipo','navEquipo'],['#nav-equipo-mobile','navEquipo'],
+      ['#nav-contacto','navContacto'],['#nav-equipo','navEquipo'],['#nav-equipo-mobile','navEquipo'],
       ['#nav-nosotros','navNosotros'],['#nav-nosotros-mobile','navNosotros'],
       ['#nav-casos-exito','navcasosexito'],
-      ['#nav-problema','problemaButton'],['#nav-blog','blogNav'],['#nav-blog-mobile','blogNav'],
-      ['#nav-newsletter','blogNav'],['#nav-newsletter-mobile','blogNav']
+      ['#nav-problema','problemaButton'],['#nav-blog','blogNav'],['#nav-blog-mobile','blogNav']
     ];
     navMap.forEach(function([sel,key]){
       try {
@@ -1142,11 +1005,12 @@ function setLanguage(language) {
         if (mobile && translations[language]) mobile.innerHTML = translations[language][key] || mobile.innerHTML;
       } catch(e){ /* noop */ }
     });
-    applyHomeCopy(language);
     setServiceCardLogos();
+    applyHomeIndexTranslations(language);
     setupScrollAnimations(true);
     saveLanguagePreference(language);
     updateDocumentLanguageAttr(language);
+    updateLanguageToggleUI(language);
     applyMailtoLinks(language);
 }
 
@@ -1157,7 +1021,9 @@ document.addEventListener('DOMContentLoaded', function(){
     } else {
         saveLanguagePreference('es');
         updateDocumentLanguageAttr('es');
+        updateLanguageToggleUI('es');
         setServiceCardLogos();
+        applyHomeIndexTranslations('es');
     }
     applyMailtoLinks(initialLang || 'es');
     initCountUps();
@@ -1345,7 +1211,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bindLangDropdown); else bindLangDropdown();
 })();
-
 
 
 
