@@ -1,159 +1,233 @@
-﻿(function(){
-  const translations = {
-    en: {
-      text: {
-        'da-hero-eyebrow': 'Performance and Digital Creativity',
-        'da-hero-title': 'Digital Advertising Agency',
-        'da-hero-lead': 'We launch integrated campaigns with segmentation, content, and real-time measurement to accelerate results.',
-        'da-intro-title': 'Digital Advertising Agency',
-        'da-intro-text-1': 'In the digital world, speaking to everyone equally means speaking to no one. Targets are increasingly smaller and more specific, so precise tools are required to reach them effectively.',
-        'da-intro-text-2': 'Our services enable you to reach high-quality audiences, monitor each campaign minute by minute, and maximize return on investment.',
-        'da-bullet-1-title': 'Research and Targeting',
-        'da-bullet-1-text': 'Empirical field research to identify key segments. We replicate those segments and build audiences across digital platforms.',
-        'da-bullet-2-title': 'Analytics and Tracking',
-        'da-bullet-2-text': 'Every action is measurable. We track, analyze, and optimize critical variables in real time to improve performance.',
-        'da-bullet-3-title': 'Content Strategy and Development',
-        'da-bullet-3-text': 'We iterate messaging based on data, aligning content with digital strategy and leaving no room for intuition.',
-        'da-card-1-title': 'YouTube Consulting',
-        'da-card-1-text': 'Massive audiovisual reach with precise segmentation and low costs.',
-        'da-card-2-title': 'Twitter Consulting',
-        'da-card-2-text': 'Message amplification focused on conversation and influence.',
-        'da-card-3-title': 'Facebook Consulting',
-        'da-card-3-text': 'Direct investment management and advanced tracking within Meta.',
-        'da-card-4-title': 'Mobile Advertising',
-        'da-card-4-text': 'Mobile-optimized formats designed for impact and conversion.',
-        'da-card-5-title': 'Google AdWords Consulting',
-        'da-card-5-text': 'Capture real demand through keywords and continuous measurement.',
-        'da-cta-title': 'Request a Digital Diagnosis',
-        'da-cta-text': "Choose the type of support you need and we'll respond with a concrete proposal for your project.",
-        'da-cta-primary': 'Marketing Advisory',
-        'da-cta-secondary': 'Digital Advertising',
-        'footer-contact-title': 'Contact',
-        'footer-services-title': 'Services',
-        'footer-service-1': 'Marketing Advisory',
-        'footer-service-2': 'Strategic Consulting',
-        'footer-service-3': 'Public Opinion Research',
-        'footer-newsletter-title': 'Newsletter',
-        'footer-newsletter-text': 'Subscribe to receive updates and strategic resources.',
-        'footer-newsletter-button': 'Submit'
-      },
-      html: {
-        'footer-address': '<strong>Address:</strong> Av. Rivadavia 1725, CABA',
-        'footer-phones': '<strong>Phone:</strong> +54 11 5547-4630<br>+54 9 2325-457856',
-        'footer-email': '<strong>Email:</strong> contacto@gp.com',
-        'footer-text': '&copy; 2025 GP Political Consulting. All rights reserved.'
-      },
-      attrs: {
-        'footer-newsletter-input': { placeholder: 'Email address' }
-      }
+(function () {
+  if (!document.querySelector('.da-hero')) return;
+
+  const SNAPSHOT = {
+    taken: false,
+    title: '',
+    html: {},
+    attrs: {},
+    hrefs: {}
+  };
+
+  const EN = {
+    title: 'GP Political Consulting · Digital Advertisement Agency',
+    html: {
+      '.tm-quick-menu': ['<a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a><a href="https://www.whatsapp.com/" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>'],
+      '.lang-option[data-lang="es"]': ['Spanish'],
+      '.lang-option[data-lang="en"]': ['English'],
+      '.desktop-menu #nav-inicio': ['Home'],
+      '.desktop-menu #nav-servicios': ['Services'],
+      '.desktop-menu #nav-newsletter': ['Newsletter'],
+      '.desktop-menu #nav-contacto': ['Contact'],
+      '.mobile-menu #nav-inicio': ['Home'],
+      '.mobile-menu #nav-servicios': ['Services'],
+      '.mobile-menu #nav-newsletter-mobile': ['Newsletter'],
+      '.mobile-menu #nav-contacto-mobile': ['Contact'],
+      '.da-hero-eyebrow': ['Performance and digital creativity'],
+      '.da-hero h1': ['Digital Advertisement Agency'],
+      '.da-hero-lead': ['We launch integrated campaigns with targeting, content, and real-time measurement to accelerate results.'],
+      '.da-intro h2': ['Digital Advertisement Agency'],
+      '.da-intro > p': [
+        'In the digital world, speaking to everyone in the same way means speaking to no one. Audiences are increasingly smaller and more specific, so you need the right tools to reach them precisely.',
+        'Our services help you reach effective audiences, monitor every campaign minute by minute, and maximize return on investment.'
+      ],
+      '.da-bullet h3': [
+        'Research and Targeting',
+        'Analytics and Tracking',
+        'Content Strategy and Development'
+      ],
+      '.da-bullet p': [
+        'Hands-on field research to identify key segments. We replicate those segments and build audiences across digital platforms.',
+        'Every action is measurable. We track, monitor, and optimize the critical variables minute by minute to improve performance.',
+        'We iterate messages based on data, aligning content with the digital strategy without leaving room for intuition.'
+      ],
+      '.da-card-body h4': [
+        'YouTube Consulting',
+        'Twitter Consulting',
+        'Facebook Consulting',
+        'Mobile Advertising',
+        'Google Adwords Consulting'
+      ],
+      '.da-card-body p': [
+        'Mass audiovisual reach with precise targeting and low costs.',
+        'Message amplification focused on conversation and influence.',
+        'Direct media investment management and advanced tracking on Meta.',
+        'Mobile formats optimized for impact and conversion.',
+        'Capture real demand with keywords and continuous measurement.'
+      ],
+      '.da-cta h3': ['Request a digital assessment'],
+      '.da-cta > p': ['Choose the type of support you need and we will reply with a concrete proposal for your project.'],
+      '.da-cta-primary': ['Marketing advisory'],
+      '.da-cta-secondary': ['Digital advertising'],
+      'footer .footer-col:nth-child(1) h4': ['Contact'],
+      'footer .footer-col:nth-child(1) p': [
+        '<strong>Address:</strong> Av. Rivadavia 1725, CABA',
+        '<strong>Phone:</strong> 54 11 554746300<br>54 9 2325457856',
+        '<strong>Email:</strong> contacto@gp.com'
+      ],
+      'footer .footer-col:nth-child(2) h4': ['Services'],
+      'footer .footer-col:nth-child(2) li a': [
+        'Marketing Advisory',
+        'Strategic Consulting',
+        'Public Opinion Research'
+      ],
+      'footer .footer-col:nth-child(3) h4': ['Newsletter'],
+      'footer .footer-col:nth-child(3) p': ['Subscribe to receive updates and strategic resources.'],
+      'footer .footer-newsletter button': ['Send'],
+      '#footer-text': ['&copy; 2025 GP Political Consulting. All rights reserved.']
+    },
+    attrs: {
+      'html::lang': ['en'],
+      '.tm-header-badge::aria-label': ['GP home'],
+      '.tm-quick-menu::aria-label': ['Quick links'],
+      '.language-selector::aria-label': ['Language selector'],
+      '.lang-toggle::aria-label': ['Select language'],
+      '.lang-menu::aria-label': ['Languages'],
+      '.tm-header-badge img::alt': ['GP Political Consulting'],
+      '.lang-toggle img::alt': ['Language'],
+      '.da-hero > img::alt': ['Team managing digital ads across multiple screens'],
+      '.footer-newsletter input::placeholder': ['Email address']
+    },
+    hrefs: {
+      '.da-cta-primary': ['mailto:contacto@gp.com?subject=Request%20for%20marketing%20advisory'],
+      '.da-cta-secondary': ['mailto:contacto@gp.com?subject=Request%20for%20digital%20advertising']
     }
   };
 
-  const snapshot = { taken: false, html: {}, attrs: {} };
-
-  function takeSnapshot(){
-    if (snapshot.taken) return;
-    try {
-      const ids = Object.keys(translations.en.text).concat(Object.keys(translations.en.html));
-      ids.forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) snapshot.html[id] = el.innerHTML;
-      });
-      const attrMap = translations.en.attrs || {};
-      Object.keys(attrMap).forEach((id) => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        snapshot.attrs[id] = {};
-        Object.keys(attrMap[id]).forEach((attr) => {
-          snapshot.attrs[id][attr] = el.getAttribute(attr);
-        });
-      });
-      snapshot.taken = true;
-    } catch (e) { /* noop */ }
+  function snapshotHTML(selector) {
+    if (SNAPSHOT.html[selector]) return;
+    const nodes = document.querySelectorAll(selector);
+    if (!nodes.length) return;
+    SNAPSHOT.html[selector] = Array.from(nodes).map((node) => node.innerHTML);
   }
 
-  function restore(){
-    try {
-      Object.keys(snapshot.html).forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) el.innerHTML = snapshot.html[id];
-      });
-      Object.keys(snapshot.attrs).forEach((id) => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        const attrs = snapshot.attrs[id] || {};
-        Object.keys(attrs).forEach((attr) => {
-          if (attrs[attr] === null || attrs[attr] === undefined) {
-            el.removeAttribute(attr);
-          } else {
-            el.setAttribute(attr, attrs[attr]);
-          }
-        });
-      });
-    } catch (e) { /* noop */ }
+  function snapshotAttr(selector, attr) {
+    const key = `${selector}::${attr}`;
+    if (SNAPSHOT.attrs[key]) return;
+    const nodes = document.querySelectorAll(selector);
+    if (!nodes.length) return;
+    SNAPSHOT.attrs[key] = Array.from(nodes).map((node) => node.getAttribute(attr));
   }
 
-  function applyLanguage(lang){
+  function snapshotHref(selector) {
+    if (SNAPSHOT.hrefs[selector]) return;
+    const nodes = document.querySelectorAll(selector);
+    if (!nodes.length) return;
+    SNAPSHOT.hrefs[selector] = Array.from(nodes).map((node) => node.getAttribute('href'));
+  }
+
+  function takeSnapshot() {
+    if (SNAPSHOT.taken) return;
+    SNAPSHOT.title = document.title;
+    Object.keys(EN.html).forEach(snapshotHTML);
+    Object.keys(EN.attrs).forEach((key) => {
+      const sep = key.lastIndexOf('::');
+      snapshotAttr(key.slice(0, sep), key.slice(sep + 2));
+    });
+    Object.keys(EN.hrefs).forEach(snapshotHref);
+    SNAPSHOT.taken = true;
+  }
+
+  function restoreHTML(selector) {
+    const values = SNAPSHOT.html[selector];
+    if (!values) return;
+    document.querySelectorAll(selector).forEach((node, index) => {
+      if (values[index] !== undefined) node.innerHTML = values[index];
+    });
+  }
+
+  function restoreAttr(selector, attr) {
+    const values = SNAPSHOT.attrs[`${selector}::${attr}`];
+    if (!values) return;
+    document.querySelectorAll(selector).forEach((node, index) => {
+      const value = values[index];
+      if (value === undefined || value === null) node.removeAttribute(attr);
+      else node.setAttribute(attr, value);
+    });
+  }
+
+  function restoreHref(selector) {
+    const values = SNAPSHOT.hrefs[selector];
+    if (!values) return;
+    document.querySelectorAll(selector).forEach((node, index) => {
+      if (values[index] !== undefined) node.setAttribute('href', values[index]);
+    });
+  }
+
+  function applyPack(pack) {
+    if (pack.title) document.title = pack.title;
+    Object.keys(pack.html).forEach((selector) => {
+      const values = pack.html[selector];
+      document.querySelectorAll(selector).forEach((node, index) => {
+        if (values[index] !== undefined) node.innerHTML = values[index];
+      });
+    });
+    Object.keys(pack.attrs).forEach((key) => {
+      const sep = key.lastIndexOf('::');
+      const selector = key.slice(0, sep);
+      const attr = key.slice(sep + 2);
+      const values = pack.attrs[key];
+      document.querySelectorAll(selector).forEach((node, index) => {
+        if (values[index] !== undefined) node.setAttribute(attr, values[index]);
+      });
+    });
+    Object.keys(pack.hrefs).forEach((selector) => {
+      const values = pack.hrefs[selector];
+      document.querySelectorAll(selector).forEach((node, index) => {
+        if (values[index] !== undefined) node.setAttribute('href', values[index]);
+      });
+    });
+  }
+
+  function applyDigitalAdvertisementLanguage(language) {
     takeSnapshot();
-    if (lang !== 'en') {
-      restore();
+
+    if ((language || 'es').toLowerCase() === 'en') {
+      applyPack(EN);
       return;
     }
-    try {
-      const t = translations.en;
-      Object.keys(t.text).forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = t.text[id];
-      });
-      Object.keys(t.html).forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) el.innerHTML = t.html[id];
-      });
-      const attrMap = t.attrs || {};
-      Object.keys(attrMap).forEach((id) => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        Object.keys(attrMap[id]).forEach((attr) => {
-          el.setAttribute(attr, attrMap[id][attr]);
-        });
-      });
-    } catch (e) { /* noop */ }
+
+    if (SNAPSHOT.title) document.title = SNAPSHOT.title;
+    Object.keys(EN.html).forEach(restoreHTML);
+    Object.keys(EN.attrs).forEach((key) => {
+      const sep = key.lastIndexOf('::');
+      restoreAttr(key.slice(0, sep), key.slice(sep + 2));
+    });
+    Object.keys(EN.hrefs).forEach(restoreHref);
   }
 
-  function resolveLanguage(){
-    try {
-      if (typeof getRequestedLanguage === 'function') {
-        return (getRequestedLanguage() || 'es').toLowerCase();
-      }
-    } catch (e) { /* noop */ }
+  function currentLanguage() {
     try {
       const params = new URLSearchParams(window.location.search);
-      const q = params.get('lang');
-      if (q) return q.toLowerCase();
-    } catch (e) { /* noop */ }
-    try {
-      const stored = window.localStorage ? localStorage.getItem('trendLang') : null;
-      if (stored) return stored.toLowerCase();
-    } catch (e) { /* noop */ }
-    return 'es';
-  }
-
-  function init(){
-    const lang = resolveLanguage();
-    applyLanguage(lang);
-    if (typeof window.setLanguage === 'function' && !window.__daLangWrapped) {
-      const original = window.setLanguage;
-      window.setLanguage = function(l){
-        original(l);
-        applyLanguage(l);
-      };
-      window.__daLangWrapped = true;
+      return (params.get('lang') || localStorage.getItem('trendLang') || 'es').toLowerCase();
+    } catch (error) {
+      return 'es';
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
+  function bindPageLanguage() {
+    if (window.__digitalAdvertisementLangWrapped) return;
+    if (typeof window.setLanguage === 'function') {
+      const originalSetLanguage = window.setLanguage;
+      window.setLanguage = function (language) {
+        originalSetLanguage(language);
+        applyDigitalAdvertisementLanguage(language);
+      };
+      window.__digitalAdvertisementLangWrapped = true;
+    }
+
+    document.querySelectorAll('.lang-option').forEach((button) => {
+      if (button.dataset.digitalAdvertisementBound === '1') return;
+      button.addEventListener('click', function () {
+        const language = this.getAttribute('data-lang') || 'es';
+        applyDigitalAdvertisementLanguage(language);
+      });
+      button.dataset.digitalAdvertisementBound = '1';
+    });
   }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    bindPageLanguage();
+    applyDigitalAdvertisementLanguage(currentLanguage());
+  });
 })();

@@ -9,7 +9,7 @@
   };
 
   const EN = {
-    title: 'Governing Without Room to Spare | GP Newsletter',
+    title: 'Outsiders on the Rise | GP Newsletter',
     html: {
       '.tm-quick-menu': ['<a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a><a href="https://www.whatsapp.com/" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>'],
       '.lang-option[data-lang="es"]': ['Spanish'],
@@ -22,35 +22,34 @@
       '.mobile-menu #nav-servicios': ['Services'],
       '.mobile-menu #nav-newsletter-mobile': ['Newsletter'],
       '.mobile-menu #nav-contacto-mobile': ['Contact'],
-      '.nl-kicker': ['Government · Crisis · 2025'],
-      '.nl-title': ['Governing without room to spare: unpopular decisions in critical contexts'],
+      '.nl-kicker': ['Ecosystem · Voter · 2025'],
+      '.nl-title': ['Outsiders on the rise: how the political board is being reshaped'],
       '.nl-meta': ['GP strategic newsletter · 6 min read'],
-      '.nl-lead': ['When there is no good news, the challenge is to sustain legitimacy without denying the cost. The key is to manage political damage with clarity, presence, and strategy.'],
+      '.nl-lead': ['Competition is no longer centered on traditional party structures. Figures without political machinery capture votes, legitimacy, and real power through distrust, performance, and disintermediation.'],
       'article > p': [
-        'There are moments when governing stops being a battle over agenda and becomes an exercise in damage management. Critical economic conditions, social conflict, unavoidable adjustments, or external crises reduce room for maneuver to a minimum.',
-        'In those scenarios, the central question is no longer how to gain support, but how to avoid losing control. Governing without room to spare requires a different kind of leadership, a different communication logic, and above all, a clear strategy to manage political costs without breaking legitimacy.',
-        'Every unpopular decision has a cost. Denying it is the first mistake. Economic adjustments, cuts, structural reforms, or emergency measures generate rejection, anxiety, and conflict.',
-        'The difference between a government that withstands pressure and one that collapses is not in avoiding the cost, but in anticipating it, measuring it correctly, and distributing it strategically. When political cost is underestimated, it accumulates. And when it accumulates without control, it turns into a crisis of authority.',
-        'One of the most common mistakes in critical contexts is trying to sell hard decisions as if they were achievements. Voters quickly perceive the dissonance between discourse and reality.',
-        'Strategic honesty does not eliminate conflict, but it reduces the feeling of deception.',
-        'In critical contexts, prolonged silence or excessive delegation communicates weakness. The governing figure must assume the symbolic cost of the decision.',
-        'It is not about overexposure, but about clear presence: showing up in difficult moments, setting an explicit course, and conveying control even in adverse scenarios. When leadership disappears, conflict fills the vacuum.',
-        'Not all wear and tear is fatal. Governing implies wear and tear. The problem arises when wear turns into loss of control.',
-        'The difference lies in three key signals: fragmentation of the internal message, improvised reactions under pressure, and an inability to prioritize conflicts. A government can go through moments of low popularity and still retain power. What it cannot sustain is the perception of disorder.',
-        'In scenarios with no room to spare, strategy stops being expansive and becomes defensive. It defines which battles to fight, which to postpone, and which to avoid.',
-        'A solid strategy makes it possible to organize unpopular decisions within a coherent framework, avoid public contradictions, and preserve political capital for key moments. Without strategy, every decision becomes an open front. With strategy, even bad news can be managed.',
-        'Critical contexts do not reward discursive creativity or forced optimism. They reward clarity, firmness, and coherence. Governing without room to spare is not an anomaly: it is a recurring phase in the exercise of power.',
-        'Those who understand this logic do not seek to please, but to sustain legitimacy while moving through conflict. Because when there is no good news, the real political asset is not popularity. It is control.'
+        'For decades, political competition was dominated by traditional party structures: hierarchical, territorial, and predictable organizations. Yet in recent years, and even more strongly as 2025 approaches, that model shows clear signs of exhaustion. In its place, outsider figures are emerging who, without the classic backing of parties, manage to capture attention, votes, and real power.',
+        'This phenomenon is neither anecdotal nor circumstantial. It responds to deep transformations in the political ecosystem, in voter behavior, and in the way legitimacy is built.',
+        'Current voters do not begin from trust, but from suspicion. Traditional institutions, parties, parliaments, unions, and the media, no longer function as automatic guarantors of credibility. In many contexts, they are perceived as slow, disconnected, or captured by their own interests.',
+        'In this scenario, the outsider does not compete despite not belonging to the system, but precisely because of it. Their main asset is symbolic distance from the status quo.',
+        'One of the most relevant changes is the shift from ideology to perceived execution. Voters no longer ask only what a candidate thinks, but: Do they speak clearly? Do they respond quickly? Do they understand my everyday problems? Do they seem authentic?',
+        'Outsiders usually stand out here: they simplify the message, reduce intermediaries, and prioritize direct communication. They do not promise doctrinal coherence, but action, disruption, and decision.',
+        'Social media and digital channels now make it possible to build political power without going through traditional structures. The outsider understands this better than anyone: they speak without filters, build a narrative in real time, and turn every intervention into an event.',
+        'It is not only about saying different things, but about saying them in a way the traditional system cannot replicate.',
+        'The contemporary voter is less loyal and more volatile. They change options more easily and evaluate election by election. This weakens historic parties, which relied on stable identities, and benefits figures capable of capturing specific moments of social discontent.',
+        'In this context, the outsider works as an escape valve: they channel frustration, anger, or exhaustion, even without offering fully structured solutions.',
+        'The rise of outsiders is not without risks: institutional fragility, difficulty governing without structure, excessive dependence on the individual figure. However, ignoring the phenomenon is a strategic mistake. It is not an anomaly, but a clear sign that the rules of the game have changed.',
+        'The advance of outsiders does not only redefine who reaches power, but how power is built. Political organizations, and business organizations too, that fail to understand this logic risk becoming obsolete: long messages, slow processes, and closed structures no longer connect with audiences that demand speed, clarity, and authenticity.',
+        'Understanding the new voter is not an ideological question, but a strategic one. And in 2025, strategy is the real battlefield.'
       ],
       '.nl-number': [
-        '1. Political cost is not eliminated, it is managed',
-        '2. Adjustments and crises: the mistake of communicating as if they were good news',
-        '3. Economic crises and conflict: the role of visible leadership',
-        '4. Wear and tear vs. loss of control',
-        '5. Strategy as an anchor in critical contexts'
+        '1. The new starting point: structural distrust',
+        '2. From ideology to political performance',
+        '3. Direct communication and disintermediation',
+        '4. The new voter: less loyalty, more evaluation',
+        '5. Risks and limits of the phenomenon'
       ],
-      '.nl-aside': ['<strong>Effective communication:</strong> in adverse situations, the goal is not enthusiasm, but understanding and predictability. Explain why, acknowledge the real impact, and avoid technical jargon or euphemisms.'],
-      'article h2': ['Conclusion: governing when there is no applause'],
+      '.nl-aside': ['<strong>Algorithmic logic:</strong> constant visibility, short emotional messages, and polarization as an engine of reach.'],
+      'article h2': ['Conclusion: it is not who wins, but how they win'],
       '.nl-footer-note': ['If you want to receive these analyses in your inbox, subscribe to the GP newsletter.'],
       'footer .footer-col:nth-child(1) h4': ['Contact'],
       'footer .footer-col:nth-child(1) p': [
@@ -79,7 +78,7 @@
       '.lang-toggle::aria-label': ['Select language'],
       '.lang-toggle img::alt': ['Language'],
       '.lang-menu::aria-label': ['Languages'],
-      '.nl-hero img::alt': ['Critical contexts'],
+      '.nl-hero img::alt': ['Illustration of political outsiders'],
       'footer .footer-newsletter input::placeholder': ['Email address']
     }
   };
@@ -147,7 +146,7 @@
     });
   }
 
-  function applyNewsletterGobernarLanguage(language) {
+  function applyNewsletterOutsidersLanguage(language) {
     takeSnapshot();
 
     if ((language || 'es').toLowerCase() === 'en') {
@@ -173,28 +172,28 @@
   }
 
   function bindPageLanguage() {
-    if (window.__newsletterGobernarLangWrapped) return;
+    if (window.__newsletterOutsidersLangWrapped) return;
     if (typeof window.setLanguage === 'function') {
       const originalSetLanguage = window.setLanguage;
       window.setLanguage = function (language) {
         originalSetLanguage(language);
-        applyNewsletterGobernarLanguage(language);
+        applyNewsletterOutsidersLanguage(language);
       };
-      window.__newsletterGobernarLangWrapped = true;
+      window.__newsletterOutsidersLangWrapped = true;
     }
 
     document.querySelectorAll('.lang-option').forEach((button) => {
-      if (button.dataset.newsletterGobernarBound === '1') return;
+      if (button.dataset.newsletterOutsidersBound === '1') return;
       button.addEventListener('click', function () {
         const language = this.getAttribute('data-lang') || 'es';
-        applyNewsletterGobernarLanguage(language);
+        applyNewsletterOutsidersLanguage(language);
       });
-      button.dataset.newsletterGobernarBound = '1';
+      button.dataset.newsletterOutsidersBound = '1';
     });
   }
 
   document.addEventListener('DOMContentLoaded', function () {
     bindPageLanguage();
-    applyNewsletterGobernarLanguage(currentLanguage());
+    applyNewsletterOutsidersLanguage(currentLanguage());
   });
 })();
