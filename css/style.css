@@ -119,6 +119,11 @@ body {
     background-color: var(--color-bg);
 }
 
+html,
+body {
+    scrollbar-gutter: auto;
+}
+
 h1,
 h2,
 h3,
@@ -142,6 +147,8 @@ nav {
     padding: 10px 0;
     position: fixed;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -185,6 +192,8 @@ nav {
     padding: 10px 20px;
     position: fixed;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -1898,6 +1907,9 @@ body.no-scroll { overflow: hidden !important; }
     position: relative;
     width: 100%;
     display: block;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
 }
 
 #inicio .video-container video {
@@ -1907,6 +1919,7 @@ body.no-scroll { overflow: hidden !important; }
 #inicio .overlay {
     position: relative;
     min-height: auto;
+    overflow: visible;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3049,13 +3062,30 @@ h1 {
 }
 
 /* Hero redesigned cards */
+#inicio.section {
+    min-height: auto;
+    display: block;
+    padding: 40px 0;
+}
+
+#inicio {
+    overflow: visible;
+}
+
+#inicio .overlay {
+    min-height: auto;
+    height: auto;
+    justify-content: center;
+}
+
 #inicio .hero-shell {
     max-width: 1200px;
-    width: 100%;
+    width: min(100%, 1200px);
     margin: 0 auto;
     text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 18px;
     padding: clamp(24px, 4vw, 36px) clamp(14px, 4vw, 32px);
     box-sizing: border-box;
@@ -3065,7 +3095,9 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 14px;
-    width: 100%;
+    width: min(100%, 1100px);
+    margin: 0 auto;
+    justify-items: center;
 }
 
 #inicio .hero-card {
@@ -3077,6 +3109,7 @@ h1 {
     color: var(--color-contrast);
     display: grid;
     gap: 10px;
+    width: 100%;
 }
 
 #inicio .hero-card h3 {
@@ -3182,15 +3215,50 @@ h1 {
 }
 
 @media (max-width: 768px) {
+    #inicio.section {
+        min-height: auto;
+        padding: 24px 0;
+    }
+    #inicio .overlay {
+        width: 100%;
+        padding: 0 !important;
+        justify-content: center;
+    }
     #inicio .hero-shell {
-        padding: 18px 12px 30px;
+        width: calc(100% - 24px) !important;
+        max-width: 540px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 0 0 24px !important;
         gap: 14px;
+        box-sizing: border-box;
+    }
+    #inicio .hero-cards {
+        grid-template-columns: 1fr;
+        width: 100% !important;
+        max-width: none;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        justify-items: center;
+    }
+    #inicio .hero-card {
+        width: 100% !important;
+        max-width: none;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        justify-self: center;
     }
     #inicio .hero-card p {
         font-size: 0.95rem;
     }
     #inicio .hero-flags-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    #inicio .flag-slot {
+        min-height: 72px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 

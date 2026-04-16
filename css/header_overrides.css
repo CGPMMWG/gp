@@ -1,17 +1,18 @@
 ﻿/* Header and language selector overrides */
 
-/* Glassy, modern nav */
+/* Header limpio estilo corporativo */
 nav {
-  background: rgba(10, 10, 16, 0.28) !important;
+  background: #ffffff !important;
   width: 100% !important;
   max-width: 100% !important;
   box-sizing: border-box !important;
-  backdrop-filter: saturate(160%) blur(12px);
-  -webkit-backdrop-filter: saturate(160%) blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  box-shadow: none;
   border-left: none !important;
   border-right: none !important;
+  gap: 6px;
 }
 
 nav ul li a {
@@ -29,32 +30,33 @@ nav ul li a {
   padding: 0 10px;
 }
 .top-agency-menu .menu-item {
-  font-weight: 700 !important;
-  color: #f5f2ff;
-  padding: 10px 14px;
-  border-radius: 12px;
-  font-size: 1.05rem;
-  transition: color 150ms ease, background 150ms ease, box-shadow 150ms ease;
+  font-weight: 500 !important;
+  color: #1a1a1a;
+  padding: 8px 12px;
+  border-radius: 0;
+  font-size: 0.98rem;
+  transition: color 150ms ease;
 }
 .top-agency-menu .menu-item:hover {
-  color: #ffffff;
-  background: rgba(255,255,255,0.08);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+  color: #111111;
+  background: transparent;
+  box-shadow: none;
 }
 .nav-cta {
   background: transparent;
-  color: #ffffff !important;
-  border: 1.6px solid rgba(255,255,255,0.9);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.28), 0 0 0 1px rgba(255,255,255,0.08);
+  color: #111111 !important;
+  border: 1.4px solid rgba(0,0,0,0.7);
+  box-shadow: none;
   border-radius: 999px !important;
-  padding: 10px 18px !important;
-  font-weight: 800 !important;
+  padding: 6px 16px !important;
+  font-weight: 600 !important;
+  font-size: 0.96rem !important;
 }
 .nav-cta::after { display: none !important; }
 .nav-cta:hover {
-  background: rgba(255,255,255,0.08);
+  background: rgba(0,0,0,0.04);
   transform: translateY(-1px);
-  box-shadow: 0 14px 26px rgba(0,0,0,0.36), 0 0 0 1px rgba(255,255,255,0.28);
+  box-shadow: none;
 }
 
 .dropdown {
@@ -68,6 +70,7 @@ nav ul li a {
   align-items: center;
   gap: 6px;
   font-size: 1.08rem;
+  color: #1a1a1a;
 }
 .dropdown .caret { font-size: 0.8em; opacity: 0.8; }
 .dropdown-menu {
@@ -108,18 +111,16 @@ nav ul li a {
 }
 
 nav ul li a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -6px;
+  content: '';
+  display: block;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #00c3ff, #7a00ff);
-  border-radius: 2px;
-  transform: translateX(-50%);
-  transition: width 180ms ease-in-out;
+  background: #f4c500;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
-
 nav ul li a:hover::after {
   width: 100%;
 }
@@ -135,13 +136,16 @@ nav ul li a:hover::after {
   align-items: center;
   justify-content: center;
   padding: 0;
-  margin-right: 14px;
+  margin-left: 0;
+  margin-right: 8px;
   border-radius: 0;
   background: transparent;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   box-shadow: none;
   align-self: center;
+  order: 1;
+  flex: 0 0 auto;
 }
 .tm-header-badge img {
   width: 170px;
@@ -161,22 +165,20 @@ nav ul li a:hover::after {
   position: absolute;
   top: 62px;
   left: 6px;
-  background: rgba(12, 10, 22, 0.9);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.12);
   border-radius: 12px;
-  box-shadow: 0 16px 32px rgba(0,0,0,0.35);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
   padding: 10px 12px;
   display: none;
   flex-direction: column;
   gap: 8px;
   min-width: 150px;
   z-index: 1201;
-  backdrop-filter: blur(10px) saturate(120%);
-  -webkit-backdrop-filter: blur(10px) saturate(120%);
 }
 
-.tm-quick-menu a {
-  color: #f5f5ff;
+ .tm-quick-menu a {
+  color: #111111;
   text-decoration: none;
   font-weight: 700;
   font-size: 0.95rem;
@@ -186,7 +188,7 @@ nav ul li a:hover::after {
 }
 
 .tm-quick-menu a:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.06);
   transform: translateX(2px);
 }
 
@@ -266,13 +268,14 @@ nav ul li a:hover::after {
 /* Place language selector inside nav; hide old one in overlay */
 .overlay .language-selector { display: none !important; }
 
-.nav-lang { margin-left: 10px; display: flex; align-items: center; }
+.nav-lang { margin-left: auto; margin-right: 12px; display: flex; align-items: center; order: 4; }
 
 nav .language-selector {
   position: relative; /* needed for dropdown positioning */
   top: auto; right: auto;
   z-index: auto;
-  display: flex; gap: 10px;
+  display: flex;
+  gap: 6px;
   padding: 0; /* no pill container */
   border-radius: 0;
   background: transparent;
@@ -285,14 +288,14 @@ nav .language-selector {
 
 nav .language-selector button {
   background: transparent;
-  color: #fff;
+  color: #111111;
   border: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: auto;
+  height: 32px;
   min-width: 0;
-  padding: 0;
+  padding: 0 10px;
   margin: 0;
   cursor: pointer;
   border-radius: 10px;
@@ -305,16 +308,16 @@ nav .language-selector button {
   nav .language-selector { padding: 4px 6px; gap: 6px; }
   nav .language-selector button { padding: 5px 10px; font-size: 12px; }
 }
-/* Align social left, menu center, lang right */
-nav .social-buttons { margin-left: 0 !important; margin-right: auto !important; align-self: center; transform: translateY(2px); }
-nav ul.desktop-menu { flex: 1 !important; justify-content: center !important; }
-.nav-lang { margin-left: auto !important; display: flex; align-items: center; align-self: center; margin-right: 18px; }
+/* Align logo left, menu near logo, lang right */
+nav ul.desktop-menu { order: 2; flex: 0 1 auto !important; justify-content: flex-start !important; margin-left: 4px !important; }
+nav .social-buttons { order: 3; margin-left: 8px !important; margin-right: 0 !important; align-self: center; transform: translateY(2px); }
 /* Mobile: keep social left, language right (visible) */
 @media (max-width: 768px) {
   nav { display: flex; align-items: center; }
-  nav .hamburger { order: 1; }
-  nav .social-buttons { order: 2; margin-left: 8px; margin-right: auto !important; align-self: center; transform: translateY(2px); }
-  .nav-lang { order: 4; display: flex !important; margin-left: auto !important; margin-right: 14px; align-items: center; align-self: center; }
+  nav .hamburger { order: 3; }
+  nav .social-buttons { order: 2; margin-left: 6px; margin-right: 0 !important; align-self: center; transform: translateY(2px); }
+  .nav-lang { order: 4; display: flex !important; margin-left: auto !important; margin-right: 8px !important; align-items: center; align-self: center; }
+  .tm-header-badge { order: 1; margin-left: 8px; margin-right: 6px; }
   nav .language-selector { padding: 4px 6px; gap: 6px; align-self: center; align-items: center; }
   nav .language-selector button { padding: 5px 10px; font-size: 12px; }
 }
@@ -325,26 +328,38 @@ nav ul.desktop-menu { flex: 1 !important; justify-content: center !important; }
   nav .social-buttons, .nav-lang, nav .language-selector { align-self: center; }
 }
 
-/* Language dropdown using image toggle */
-.language-selector .lang-toggle img {
-  width: 60px;              /* larger icon size */
-  height: 60px;             /* square */
-  object-fit: contain;
-  display: block;
+/* Language dropdown using text toggle */
+.language-selector .lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  padding: 0 10px;
+  border-radius: 0;
+}
+.language-selector .lang-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+.language-selector .lang-caret {
+  font-size: 0.65rem;
+  line-height: 1;
+  transform: translateY(1px);
 }
 
 .language-selector .lang-menu {
   position: absolute;
   right: 0;
-  top: 66px;                /* keep a small gap under 60px icon */
-  background: rgba(10,10,16,0.95);
-  border: 1px solid rgba(255,255,255,0.18);
+  top: 42px;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.12);
   border-radius: 10px;
   padding: 6px;
   display: none;
   min-width: 140px;
   z-index: 1200;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .language-selector.open .lang-menu { display: block; }
@@ -354,13 +369,13 @@ nav ul.desktop-menu { flex: 1 !important; justify-content: center !important; }
   width: 100%;
   text-align: left;
   background: transparent;
-  color: #fff;
+  color: #111111;
   border: none;
   padding: 8px 10px;
   border-radius: 8px;
   font-size: 14px;
 }
-.language-selector .lang-option:hover { background: rgba(255,255,255,0.10); }
+.language-selector .lang-option:hover { background: rgba(0,0,0,0.06); }
 
 /* ===== Casos de exito (Flip Cards) ===== */
 #casos-exito .logo,
@@ -571,6 +586,7 @@ nav ul.desktop-menu { flex: 1 !important; justify-content: center !important; }
     transform-origin: top center !important;
     padding-left: env(safe-area-inset-left, 0) !important;
     padding-right: env(safe-area-inset-right, 0) !important;
+    display: none !important;
   }
 
   /* Clean, centered items */
@@ -589,7 +605,11 @@ nav ul.desktop-menu { flex: 1 !important; justify-content: center !important; }
     0% { opacity: 0; transform: translateY(-12px) scaleY(0.96); }
     100% { opacity: 1; transform: translateY(0) scaleY(1); }
   }
-  nav ul.mobile-menu.active { animation: menuDropGlass 260ms cubic-bezier(.22,.9,.24,1) both; }
+  nav ul.mobile-menu.active {
+    animation: menuDropGlass 260ms cubic-bezier(.22,.9,.24,1) both;
+    display: flex !important;
+    flex-direction: column !important;
+  }
 
   /* Subtle tap feedback */
   nav ul.mobile-menu a:active { background: rgba(255,255,255,0.06) !important; }
@@ -905,7 +925,7 @@ nav ul li a,
 .dropdown-menu a,
 .language-selector button,
 .language-selector .lang-option {
-  font-family: Georgia, "Times New Roman", serif !important;
-  font-weight: 600 !important;
+  font-family: "Times New Roman", Georgia, serif !important;
+  font-weight: 500 !important;
   letter-spacing: 0.01em;
 }
