@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GP Newsleter estrategico</title>
+    <title>GP Strategic Newsletter | Analisis politico y escenarios</title>
+    <meta name="description" content="Edicion del newsletter estrategico de GP con analisis politico, opinion publica, gobierno y region.">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gottlerpentke.com/news-daily.html">
+    <meta property="og:title" content="GP Strategic Newsletter | Analisis politico y escenarios">
+    <meta property="og:description" content="Edicion del newsletter estrategico de GP con analisis politico, opinion publica, gobierno y region.">
+    <meta property="og:image" content="https://gottlerpentke.com/img/ABC.png">
+    <meta property="og:url" content="https://gottlerpentke.com/news-daily.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Gottler Pentke">
+    <meta property="og:locale" content="es_AR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GP Strategic Newsletter | Analisis politico y escenarios">
+    <meta name="twitter:description" content="Edicion del newsletter estrategico de GP con analisis politico, opinion publica, gobierno y region.">
+    <meta name="twitter:image" content="https://gottlerpentke.com/img/ABC.png">
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/header_overrides.css">
@@ -54,6 +68,16 @@
             gap: 24px;
             margin-top: 24px;
         }
+        .daily-lead-link,
+        .daily-card-link {
+            display: block;
+            color: var(--daily-ink) !important;
+            text-decoration: none;
+        }
+        .daily-lead-link .daily-title,
+        .daily-card-link h3 {
+            color: var(--daily-ink) !important;
+        }
         .daily-lead {
             border-bottom: 1px solid var(--daily-border);
             padding-bottom: 20px;
@@ -78,7 +102,6 @@
             margin: 8px 0 8px;
             line-height: 1.2;
         }
-        .daily-title a { color: var(--daily-ink); text-decoration: none; }
         .daily-excerpt {
             color: var(--daily-muted);
             font-size: 1rem;
@@ -107,8 +130,19 @@
             margin: 0 0 6px;
             line-height: 1.25;
         }
-        .daily-card h3 a { color: var(--daily-ink); text-decoration: none; }
         .daily-card p { margin: 0; color: var(--daily-muted); font-size: 0.95rem; }
+        .daily-lead-link:hover .daily-title,
+        .daily-card-link:hover h3,
+        .daily-lead-link:focus-visible .daily-title,
+        .daily-card-link:focus-visible h3 {
+            text-decoration: underline;
+            text-underline-offset: 0.08em;
+        }
+        .daily-lead-link:focus-visible,
+        .daily-card-link:focus-visible {
+            outline: 2px solid var(--daily-accent);
+            outline-offset: 6px;
+        }
 
         .daily-section {
             margin-top: 16px;
@@ -127,7 +161,7 @@
         }
         .daily-list a {
             text-decoration: none;
-            color: inherit;
+            color: var(--daily-ink) !important;
         }
         .daily-list article {
             border: 1px solid var(--daily-border);
@@ -139,6 +173,7 @@
             font-family: "Libre Baskerville", "Inter", serif;
             font-size: 1.15rem;
             margin: 0 0 6px;
+            color: var(--daily-ink) !important;
         }
         .daily-list p {
             margin: 0;
@@ -205,79 +240,87 @@
 
         <main class="daily-shell">
             <div class="daily-top">
-                <div id="daily-date">Jueves, 8 de enero de 2026</div>
-                <div id="daily-follow">Seguinos: Facebook &middot; WhatsApp</div>
+                <div>Jueves, 8 de enero de 2026</div>
+                <div>Seguinos: Facebook &middot; WhatsApp</div>
             </div>
             <div class="daily-masthead">
-                <h1 id="daily-title">GP Newsleter estrategico</h1>
+                <h1>GP Newsleter estrategico</h1>
             </div>
 
             <section class="daily-grid">
-                <article class="daily-lead">
-                    <img src="./img/ABC.png" alt="Fragmentacion social" id="daily-lead-image">
-                    <div class="daily-kicker" id="daily-lead-kicker">Estrategia &middot; Voto &middot; 2025</div>
-                    <h2 class="daily-title"><a href="newsletter-fragmentacion.html" id="daily-lead-title">Fragmentacion social y fin de las mayorias estables</a></h2>
-                    <p class="daily-excerpt" id="daily-lead-excerpt">El electorado se rompe en capas con demandas superpuestas. Competir exige leer tensiones locales, coordinar microsegmentos y sostener una narrativa que ordene la diversidad.</p>
-                </article>
+                <a class="daily-lead-link" href="newsletter-fragmentacion.html" aria-label="Abrir articulo Fragmentacion social y fin de las mayorias estables">
+                    <article class="daily-lead">
+                        <img src="./img/ABC.png" alt="Fragmentacion social">
+                        <div class="daily-kicker">Estrategia &middot; Voto &middot; 2025</div>
+                        <h2 class="daily-title">Fragmentacion social y fin de las mayorias estables</h2>
+                        <p class="daily-excerpt">El electorado se rompe en capas con demandas superpuestas. Competir exige leer tensiones locales, coordinar microsegmentos y sostener una narrativa que ordene la diversidad.</p>
+                    </article>
+                </a>
 
                 <div class="daily-side">
-                    <article class="daily-card">
-                        <img src="./img/outsiders.png" alt="Outsiders politicos" id="daily-card-1-image">
-                        <div>
-                            <div class="daily-kicker" id="daily-card-1-kicker">Ecosistema &middot; Votante &middot; 2025</div>
-                            <h3><a href="newsletter-outsiders.html" id="daily-card-1-title">Outsiders en ascenso: como se reconfigura el tablero politico</a></h3>
-                            <p id="daily-card-1-excerpt">La desconfianza en estructuras clasicas abre espacio a figuras que capturan atencion con comunicacion directa, performance y ruptura del statu quo.</p>
-                        </div>
-                    </article>
+                    <a class="daily-card-link" href="newsletter-outsiders.html" aria-label="Abrir articulo Outsiders en ascenso">
+                        <article class="daily-card">
+                            <img src="./img/outsiders.png" alt="Outsiders politicos">
+                            <div>
+                                <div class="daily-kicker">Ecosistema &middot; Votante &middot; 2025</div>
+                                <h3>Outsiders en ascenso: como se reconfigura el tablero politico</h3>
+                                <p>La desconfianza en estructuras clasicas abre espacio a figuras que capturan atencion con comunicacion directa, performance y ruptura del statu quo.</p>
+                            </div>
+                        </article>
+                    </a>
 
-                    <article class="daily-card">
-                        <img src="./img/GOBERNAR.png" alt="Gobernar sin margen" id="daily-card-2-image">
-                        <div>
-                            <div class="daily-kicker" id="daily-card-2-kicker">Gobierno &middot; Crisis &middot; 2025</div>
-                            <h3><a href="newsletter-gobernar-sin-margen.html" id="daily-card-2-title">Gobernar sin margen: decisiones impopulares en contextos criticos</a></h3>
-                            <p id="daily-card-2-excerpt">Cuando no hay buenas noticias, el desafio es sostener legitimidad con claridad, presencia y estrategia.</p>
-                        </div>
-                    </article>
-                    <article class="daily-card">
-                        <img src="./img/NEWSVEN.png" alt="Venezuela despues del colapso" id="daily-card-3-image">
-                        <div>
-                            <div class="daily-kicker" id="daily-card-3-kicker">Region &middot; Transicion &middot; 2025</div>
-                            <h3><a href="newsletter-venezuela-colapso.html" id="daily-card-3-title">Venezuela despues del colapso: poder sin legitimidad y transicion sin consenso</a></h3>
-                            <p id="daily-card-3-excerpt">El poder persiste mientras la legitimidad se erosiona. La transici&oacute;n ya no es una fecha, sino un dilema de condiciones y capacidad real de gobernar.</p>
-                        </div>
-                    </article>
+                    <a class="daily-card-link" href="newsletter-gobernar-sin-margen.html" aria-label="Abrir articulo Gobernar sin margen">
+                        <article class="daily-card">
+                            <img src="./img/GOBERNAR.png" alt="Gobernar sin margen">
+                            <div>
+                                <div class="daily-kicker">Gobierno &middot; Crisis &middot; 2025</div>
+                                <h3>Gobernar sin margen: decisiones impopulares en contextos criticos</h3>
+                                <p>Cuando no hay buenas noticias, el desafio es sostener legitimidad con claridad, presencia y estrategia.</p>
+                            </div>
+                        </article>
+                    </a>
+                    <a class="daily-card-link" href="newsletter-venezuela-colapso.html" aria-label="Abrir articulo Venezuela despues del colapso">
+                        <article class="daily-card">
+                            <img src="./img/NEWSVEN.png" alt="Venezuela despues del colapso">
+                            <div>
+                                <div class="daily-kicker">Region &middot; Transicion &middot; 2025</div>
+                                <h3>Venezuela despues del colapso: poder sin legitimidad y transicion sin consenso</h3>
+                                <p>El poder persiste mientras la legitimidad se erosiona. La transici&oacute;n ya no es una fecha, sino un dilema de condiciones y capacidad real de gobernar.</p>
+                            </div>
+                        </article>
+                    </a>
                 </div>
             </section>
 
             <section class="daily-section">
-                <h2 id="daily-section-title">Todo el newsletter</h2>
+                <h2>Todo el newsletter</h2>
                 <div class="daily-list">
                     <a href="newsletter-fragmentacion.html">
                         <article>
-                            <div class="daily-kicker" id="daily-list-1-kicker">Estrategia &middot; Voto &middot; 2025</div>
-                            <h3 id="daily-list-1-title">Fragmentacion social y fin de las mayorias estables</h3>
-                            <p id="daily-list-1-excerpt">Como competir en electorados rotos y volatiles con precision territorial y coaliciones flexibles.</p>
+                            <div class="daily-kicker">Estrategia &middot; Voto &middot; 2025</div>
+                            <h3>Fragmentacion social y fin de las mayorias estables</h3>
+                            <p>Como competir en electorados rotos y volatiles con precision territorial y coaliciones flexibles.</p>
                         </article>
                     </a>
                     <a href="newsletter-outsiders.html">
                         <article>
-                            <div class="daily-kicker" id="daily-list-2-kicker">Ecosistema &middot; Votante &middot; 2025</div>
-                            <h3 id="daily-list-2-title">Outsiders en ascenso: como se reconfigura el tablero politico</h3>
-                            <p id="daily-list-2-excerpt">El ascenso de figuras sin aparato que ganan legitimidad desde la distancia al sistema.</p>
+                            <div class="daily-kicker">Ecosistema &middot; Votante &middot; 2025</div>
+                            <h3>Outsiders en ascenso: como se reconfigura el tablero politico</h3>
+                            <p>El ascenso de figuras sin aparato que ganan legitimidad desde la distancia al sistema.</p>
                         </article>
                     </a>
                     <a href="newsletter-gobernar-sin-margen.html">
                         <article>
-                            <div class="daily-kicker" id="daily-list-3-kicker">Gobierno &middot; Crisis &middot; 2025</div>
-                            <h3 id="daily-list-3-title">Gobernar sin margen: decisiones impopulares en contextos criticos</h3>
-                            <p id="daily-list-3-excerpt">Administrar costos politicos sin romper legitimidad cuando el margen de maniobra es minimo.</p>
+                            <div class="daily-kicker">Gobierno &middot; Crisis &middot; 2025</div>
+                            <h3>Gobernar sin margen: decisiones impopulares en contextos criticos</h3>
+                            <p>Administrar costos politicos sin romper legitimidad cuando el margen de maniobra es minimo.</p>
                         </article>
                     </a>
                     <a href="newsletter-venezuela-colapso.html">
                         <article>
-                            <div class="daily-kicker" id="daily-list-4-kicker">Regi&oacute;n &middot; Transici&oacute;n &middot; 2025</div>
-                            <h3 id="daily-list-4-title">Venezuela despu&eacute;s del colapso: poder sin legitimidad</h3>
-                            <p id="daily-list-4-excerpt">El poder persiste mientras la legitimidad se erosiona. La transici&oacute;n ya no es una fecha.</p>
+                            <div class="daily-kicker">Regi&oacute;n &middot; Transici&oacute;n &middot; 2025</div>
+                            <h3>Venezuela despu&eacute;s del colapso: poder sin legitimidad</h3>
+                            <p>El poder persiste mientras la legitimidad se erosiona. La transici&oacute;n ya no es una fecha.</p>
                         </article>
                     </a>
                 </div>
@@ -287,26 +330,26 @@
         <footer class="footer-new" id="contact">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4 id="footer-contact-title">Contacto</h4>
-                    <p id="footer-address"><strong>Direccion:</strong> Av. Rivadavia 1725, CABA</p>
-                    <p id="footer-phones"><strong>Telefonos:</strong> 54 11 554746300<br>54 9 2325457856</p>
-                    <p id="footer-email"><strong>Email:</strong> contacto@gp.com</p>
+                    <h4>Contacto</h4>
+                    <p><strong>Direccion:</strong> Av. Rivadavia 1725, CABA</p>
+                    <p><strong>Telefonos:</strong> 54 11 554746300<br>54 9 2325457856</p>
+                    <p><strong>Email:</strong> contacto@gp.com</p>
                 </div>
                 <div class="footer-col">
-                    <h4 id="footer-services-title">Servicios</h4>
+                    <h4>Servicios</h4>
                     <ul>
-                        <li id="footer-service-1">Planificacion y fortalecimiento institucional</li>
-                        <li id="footer-service-2">Comunicacion politica y campanas</li>
-                        <li id="footer-service-3">Estudios de opinion publica</li>
-                        <li id="footer-service-4">Capacitacion y escuela de gobierno</li>
+                        <li>Planificacion y fortalecimiento institucional</li>
+                        <li>Comunicacion politica y campanas</li>
+                        <li>Estudios de opinion publica</li>
+                        <li>Capacitacion y escuela de gobierno</li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4 id="footer-newsletter-title">Newsletter</h4>
-                    <p id="footer-newsletter-text">Suscribite para recibir novedades y recursos estrategicos.</p>
+                    <h4>Newsletter</h4>
+                    <p>Suscribite para recibir novedades y recursos estrategicos.</p>
                     <form class="footer-newsletter" action="#" method="POST">
-                        <input type="email" name="email" id="footer-newsletter-input" placeholder="Correo electronico" required>
-                        <button type="submit" id="footer-newsletter-button">Enviar</button>
+                        <input type="email" name="email" placeholder="Correo electronico" required>
+                        <button type="submit">Enviar</button>
                     </form>
                 </div>
             </div>
@@ -354,3 +397,4 @@
     </script>
 </body>
 </html>
+

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://trendmakers.agency/sitemap.xml
+Sitemap: https://gottlerpentke.com/sitemap.xml
