@@ -128,7 +128,7 @@ function takeI18nSnapshot(){
 
 const translations = {
     es: {
-        title: "TrendMakers",
+        title: "GOPE Consulting",
         subtitle: "Your digital Partner",
         navInicio: "Inicio",
         navAcerca: "Nosotros",
@@ -138,7 +138,7 @@ const translations = {
         navNosotros: "Nosotros",
         navcasosexito: "Casos de &eacute;xito",
         blogNav: "Blog",
-        introTitle: "Bienvenidos a TrendMakers",
+        introTitle: "Bienvenidos a GOPE Consulting",
         introTagline: "Impulsamos el crecimiento de tu negocio con marketing, análisis de datos, automatización e inteligencia artificial.",
         introText: "Impulsamos el crecimiento de tu negocio con marketing, análisis de datos, automatización e inteligencia artificial.<br><br>Creamos y ejecutamos estrategias digitales personalizadas, basadas en datos, para atraer mejores clientes y escalar tus resultados.",
         aboutTitle: "&iquest;¿Por qu&eacute; elegirnos como tu socio digital?",
@@ -162,7 +162,7 @@ const translations = {
         blogKicker: "Marketing &middot; Datos &middot; automatizaci&oacute;n",
         blogTitle: "Conoc&eacute; nuestro blog",
         blogSubtitle: "Aprend&eacute; con nuestros especialistas los errores m&aacute;s comunes y c&oacute;mo evitarlos con datos y automatizaci&oacute;n.",
-        blogMeta: "Por TrendMakers &middot; 19/11/2025",
+        blogMeta: "Por GOPE Consulting &middot; 19/11/2025",
         blogEyebrow: "Art&iacute;culo destacado",
         blogArticleTitle: "9 errores de marketing que frenan a cualquier negocio (y c&oacute;mo evitarlos)",
         blogExcerpt: "En un mercado saturado, la diferencia no est&aacute; en publicar m&aacute;s sino en hacerlo estrat&eacute;gicamente. Conoc&eacute; los 9 fallos que vemos en negocios reales y c&oacute;mo evitarlos.",
@@ -183,7 +183,7 @@ const translations = {
         labelEmail: "Correo Electr&oacute;nico:",
         labelProblema: "Proyecto:",
         submitButton: "Enviar",
-        footerText: "&copy; 2023 TrendMakers. Todos los derechos reservados.",
+        footerText: "&copy; 2026 GOPE Consulting. Todos los derechos reservados.",
     
         teamDetails: `
             <div class="team-card">
@@ -226,7 +226,7 @@ const translations = {
         labelEmail: "Correo Electr&oacute;nico:",
         labelProblema: "Proyecto:",
         submitButton: "Enviar",
-        footerText: "&copy; 2023 TrendMakers. Todos los derechos reservados.",
+        footerText: "&copy; 2026 GOPE Consulting. Todos los derechos reservados.",
         aboutUsText: "Somos una agencia de marketing a nivel global que se dedica a brindar servicios de excelencia a clientes de todas partes del mundo. Con un equipo de expertos en diversas &aacute;reas del marketing digital, nos especializamos en crear estrategias personalizadas que se adaptan a las necesidades espec&iacute;ficas de cada negocio. Nuestra misi&oacute;n es impulsar el crecimiento y &eacute;xito de nuestros clientes a trav&eacute;s de soluciones innovadoras y efectivas. Desde la gesti&oacute;n de redes sociales hasta el desarrollo de campa&ntilde;as publicitarias integrales, estamos comprometidos con la excelencia y la satisfacci&oacute;n del cliente en cada proyecto que emprendemos.",
         serviceDetails: `
             <a class="service-card animate__animated" href="marketing-automation.html" data-service-id="marketing-automation">
@@ -255,7 +255,7 @@ const translations = {
                 <p>Implementamos IA y automatizaciones que mejoran procesos y crean ventaja competitiva.</p>
             </a>
         `,
-        contactFormTitle: "&iquest;Necesitas ayuda digital? TrendMakers es tu soluci&oacute;n",
+        contactFormTitle: "&iquest;Necesitas ayuda digital? GOPE Consulting es tu soluci&oacute;n",
         labelName: "Nombre:",
         labelCompany: "Empresa:",
         labelProject: "Proyecto:",
@@ -264,7 +264,7 @@ const translations = {
         detailBackButton: "? Volver"
     },
     en: {
-        title: "TrendMakers",
+        title: "GOPE Consulting",
         subtitle: "Your digital Partner",
         navInicio: "Home",
         navAcerca: "About us",
@@ -274,7 +274,7 @@ const translations = {
         navNosotros: "About us",
         navcasosexito: "Success Stories",
         blogNav: "Blog",
-        introTitle: "Welcome to TrendMakers",
+        introTitle: "Welcome to GOPE Consulting",
         introTagline: "We drive your business growth through marketing, data analysis, automation, and artificial intelligence.",
         introText: "We design and execute personalized, data-driven digital strategies to attract better clients and scale your results.",
         aboutTitle: "Why choose us as your digital partner?",
@@ -298,7 +298,7 @@ const translations = {
         blogKicker: "Marketing &middot; Data &middot; Automation",
         blogTitle: "Explore our blog",
         blogSubtitle: "Learn the most common mistakes from our specialists and how to avoid them with data and automation.",
-        blogMeta: "By TrendMakers &middot; Nov 19, 2025",
+        blogMeta: "By GOPE Consulting &middot; Nov 19, 2025",
         blogEyebrow: "Featured article",
         blogArticleTitle: "9 marketing mistakes that slow any business (and how to avoid them)",
         blogExcerpt: "In a saturated market, the difference isn't publishing more but doing it strategically. See the 9 mistakes we find in real businesses and how to avoid them.",
@@ -319,7 +319,7 @@ const translations = {
         labelEmail: "Email:",
         labelProblema: "Project:",
         submitButton: "Send",
-    footerText: "&copy; 2023 TrendMakers. All rights reserved.",    
+    footerText: "&copy; 2026 GOPE Consulting. All rights reserved.",    
     teamDetails: `
             <div class="team-card">
                 <h3>Marketing Consultants</h3>
@@ -361,7 +361,7 @@ const translations = {
         labelEmail: "Email:",
         labelProblema: "Project:",
         submitButton: "Submit",
-        footerText: "&copy; 2023 TrendMakers. All rights reserved.",    
+        footerText: "&copy; 2026 GOPE Consulting. All rights reserved.",    
         aboutUsText: "We are a global marketing agency dedicated to providing excellent services to clients all over the world. With a team of experts in various areas of digital marketing, we specialize in creating personalized strategies that cater to the specific needs of each business. Our mission is to drive growth and success for our clients through innovative and effective solutions. From social media management to the development of comprehensive advertising campaigns, we are committed to excellence and customer satisfaction in every project we undertake.",
         serviceDetails: `
             <a class="service-card animate__animated" href="marketing-automation.html?lang=en" data-service-id="marketing-automation">
@@ -390,7 +390,7 @@ const translations = {
                 <p>We implement AI and automations to improve processes and build competitive advantage.</p>
             </a>
         `,
-        contactFormTitle: "Need help with digital marketing TrendMakers is your solution",
+        contactFormTitle: "Need help with digital marketing GOPE Consulting is your solution",
         labelName: "Name:",
         labelCompany: "Company:",
         labelProject: "Project:",
@@ -488,9 +488,9 @@ const translations = {
 
 const HOME_INDEX_I18N = {
   en: {
-    documentTitle: 'GP Political Consulting',
+    documentTitle: 'GOPE Consulting',
     html: {
-      '#title': ['GP Political Consulting'],
+      '#title': ['GOPE Consulting'],
       '#subtitle': ['Turning political goals into reality'],
       '.hero-contact-btn': ['Contact'],
       '.lang-toggle .lang-label': ['EN'],
@@ -552,23 +552,23 @@ const HOME_INDEX_I18N = {
         'Explore service'
       ],
       '#closing-cta-title': ['Ready to take your political project to the next level?'],
-      '#contact-soon': ['Tell us about your project and a GP Political Consulting specialist will contact you shortly to define the next steps.'],
+      '#contact-soon': ['Tell us about your project and a GOPE Consulting specialist will contact you shortly to define the next steps.'],
       '#show-popup': ['Tell us about your project'],
       '#blog-title': ['Explore our newsletter'],
       '.newsletter-card__meta': [
-        'Strategy &middot; Vote &middot; 2025',
-        'Government &middot; Crisis &middot; 2025',
-        'Ecosystem &middot; Voter &middot; 2025'
+        'Strategy &middot; Vote &middot; 2026',
+        'Strategy &middot; Territory &middot; 2026',
+        'Ecosystem &middot; Voter &middot; 2026'
       ],
       '.newsletter-card__tag': ['Featured edition'],
       '.newsletter-card__title': [
         'Social fragmentation and the end of stable majorities',
-        'Governing without room to spare: unpopular decisions in critical contexts',
+        'How to do politics in unequal municipalities',
         'Outsiders on the rise: how they are reshaping the political landscape'
       ],
       '.newsletter-card__desc': [
         'The electorate is fragmenting into layers with overlapping demands. Competing now requires reading local tensions, coordinating microsegments, and sustaining a narrative that brings order to diversity.',
-        'When there is no good news, the challenge is to preserve legitimacy through clarity, presence, and strategy to manage political costs.',
+        'Governing where gated communities, middle-class neighborhoods, and informal settlements coexist requires a shared narrative and a precise territorial reading.',
         'New dynamics are emerging in an environment of distrust. Why candidates outside traditional parties capture attention and votes: what they see, interpret, and execute better than traditional structures. The new voter, institutional rupture, and the transformation of the game.'
       ],
       '.newsletter-card__cta': [
@@ -576,17 +576,17 @@ const HOME_INDEX_I18N = {
         'Read article',
         'Read article'
       ],
-      '.blog-all-link a': ['View all articles'],
-      '#contact-title': ['Want to take your political goals to the next level? Leave us your details and we will get in touch.'],
+      '.blog-all-cta': ['View all articles'],
+      '#contact-title': ['Let us build a tailored political strategy.'],
+      '#contact-copy': ['Complete the form and our team will get in touch to understand your project and evaluate how we can support you.'],
       '#label-name': ['Name'],
       '#label-company': ['Party / Institution'],
       '#label-project': ['Project'],
       '#submit-contact-form': ['Send'],
       '.footer-col h4': ['Contact', 'Useful links', 'Services', 'Newsletter'],
       'footer .footer-col:nth-child(1) p': [
-        '<strong>Address:</strong> Av. Rivadavia 1725, CABA',
-        '<strong>Phone:</strong> 54 11 554746300<br>54 9 2325457856',
-        '<strong>Email:</strong> contacto@gp.com'
+        '<strong>Phone:</strong> <a href="https://wa.me/541122705173" target="_blank" rel="noopener">+54 11 2270 5173</a><br><a href="https://wa.me/541139282896" target="_blank" rel="noopener">+54 11 3928 2896</a>',
+        '<strong>Email:</strong> <a href="mailto:info@gopeconsulting.com">info@gopeconsulting.com</a>'
       ],
       'footer .footer-col:nth-child(2) li a': ['Home', 'Newsletter', 'Services'],
       'footer .footer-col:nth-child(3) li a': [
@@ -596,7 +596,7 @@ const HOME_INDEX_I18N = {
       ],
       'footer .footer-col:nth-child(4) p': ['Subscribe to receive updates and strategic resources.'],
       '.footer-newsletter button': ['Send'],
-      '#footer-text': ['&copy; 2025 GP Political Consulting. All rights reserved.']
+      '#footer-text': ['&copy; 2026 GOPE Consulting. All rights reserved.']
     },
     attrs: {
       '.language-selector::aria-label': ['Language selector'],
@@ -616,7 +616,7 @@ const HOME_INDEX_I18N = {
       ],
       '.newsletter-card__img img::alt': [
         'Social fragmentation',
-        'Governing without room to spare',
+        'Unequal municipalities',
         'Outsiders on the rise'
       ],
       '.footer-newsletter input::placeholder': ['Email address']
@@ -662,11 +662,11 @@ function applyHomeIndexTranslations(language){
 }
 
 // Dynamic mailto builder by language
-const MAILTO_ES = `mailto:info@trendmakers.agency?subject=${encodeURIComponent('Solicitud de información sobre sus servicios')}&body=${encodeURIComponent('Hola, ¿cómo están? Me gustaría recibir información adicional sobre los servicios que ofrecen. Muchas gracias.')}`;
-const MAILTO_EN = `mailto:info@trendmakers.agency?subject=${encodeURIComponent('Request for Information About Your Services')}&body=${encodeURIComponent("Hi, hope you're doing well. I’d like to receive additional information about the services you offer. Thank you.")}`;
+const MAILTO_ES = `mailto:info@gopeconsulting.com?subject=${encodeURIComponent('Solicitud de información sobre sus servicios')}&body=${encodeURIComponent('Hola, ¿cómo están? Me gustaría recibir información adicional sobre los servicios que ofrecen. Muchas gracias.')}`;
+const MAILTO_EN = `mailto:info@gopeconsulting.com?subject=${encodeURIComponent('Request for Information About Your Services')}&body=${encodeURIComponent("Hi, hope you're doing well. I’d like to receive additional information about the services you offer. Thank you.")}`;
 
-const MAILTO_ES_GP = `mailto:info@gp.com?subject=${encodeURIComponent('Consulta sobre consultoria politica')}&body=${encodeURIComponent('Hola, me gustaria recibir mas informacion sobre sus servicios de consultoria politica. Muchas gracias.')}`;
-const MAILTO_EN_GP = `mailto:info@gp.com?subject=${encodeURIComponent('Inquiry about political consulting')}&body=${encodeURIComponent('Hello, I would like to receive more information about your political consulting services. Thank you.')}`;
+const MAILTO_ES_GP = `mailto:info@gopeconsulting.com?subject=${encodeURIComponent('Consulta sobre consultoria politica')}&body=${encodeURIComponent('Hola, me gustaria recibir mas informacion sobre sus servicios de consultoria politica. Muchas gracias.')}`;
+const MAILTO_EN_GP = `mailto:info@gopeconsulting.com?subject=${encodeURIComponent('Inquiry about political consulting')}&body=${encodeURIComponent('Hello, I would like to receive more information about your political consulting services. Thank you.')}`;
 
 function applyMailtoLinks(lang){
   const href = (lang === 'en') ? MAILTO_EN_GP : MAILTO_ES_GP;
@@ -770,6 +770,42 @@ function setupScrollAnimations(rescan) {
         }
         scrollObserver.observe(element);
     });
+}
+
+function setupHeroMobileCardAnimations() {
+    const mobileQuery = window.matchMedia('(max-width: 768px)');
+    const cards = Array.from(document.querySelectorAll('#inicio .hero-card'));
+    if (!mobileQuery.matches || !cards.length) return;
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    cards.forEach(card => {
+        card.classList.remove('visible', 'hero-mobile-in');
+        if (!prefersReduced) card.classList.add('hero-mobile-ready');
+    });
+
+    const revealCards = () => {
+        cards.forEach(card => {
+            card.classList.remove('hero-mobile-ready');
+            card.classList.add('hero-mobile-in');
+        });
+    };
+
+    if (prefersReduced || !('IntersectionObserver' in window)) {
+        revealCards();
+        return;
+    }
+
+    const trigger = document.querySelector('#inicio .hero-cards') || cards[0];
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                revealCards();
+                obs.disconnect();
+            }
+        });
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+    observer.observe(trigger);
 }
 
 // Conteo animado para stats del blog
@@ -876,6 +912,7 @@ function setLanguage(language) {
         } catch (e) { /* noop */ }
         applyHomeIndexTranslations('es');
         setupScrollAnimations(true);
+        setupHeroMobileCardAnimations();
         saveLanguagePreference('es');
         updateDocumentLanguageAttr('es');
         updateLanguageToggleUI('es');
@@ -1008,6 +1045,7 @@ function setLanguage(language) {
     setServiceCardLogos();
     applyHomeIndexTranslations(language);
     setupScrollAnimations(true);
+    setupHeroMobileCardAnimations();
     saveLanguagePreference(language);
     updateDocumentLanguageAttr(language);
     updateLanguageToggleUI(language);
@@ -1032,6 +1070,7 @@ document.addEventListener('DOMContentLoaded', function(){
 // Animaciones de entrada
 document.addEventListener('DOMContentLoaded', function() {
     setupScrollAnimations();
+    setupHeroMobileCardAnimations();
     try { initWhyCarousel(); } catch(e) { /* noop */ }
 
     // Pop-up removido: permitir que el enlace mailto funcione directamente

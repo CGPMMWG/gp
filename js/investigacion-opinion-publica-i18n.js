@@ -10,7 +10,7 @@
   };
 
   const EN = {
-    title: 'GP Political Consulting · Public Opinion Research',
+    title: 'GOPE Consulting · Public Opinion Research',
     html: {
       '.tm-quick-menu': ['<a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a><a href="https://www.whatsapp.com/" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>'],
       '.lang-option[data-lang="es"]': ['Spanish'],
@@ -32,7 +32,7 @@
         'Our approach',
         'Key information'
       ],
-      '.ip-what-text p': ['Public opinion research is a strategic tool for political decision-making. At GP, we design studies aimed at understanding social climates, detecting early signals, and anticipating scenarios by integrating data, context, and analysis so you can intervene with precision.'],
+      '.ip-what-text p': ['Public opinion research is a strategic tool for political decision-making. At GOPE Consulting, we design studies aimed at understanding social climates, detecting early signals, and anticipating scenarios by integrating data, context, and analysis so you can intervene with precision.'],
       '.ip-what-title': [
         'Measure social and political climates',
         'Detect emerging trends',
@@ -56,11 +56,11 @@
         'Clear and prioritized recommendations: what to do, where, and with which narrative so decisions are evidence-based.'
       ],
       'section[style="margin:26px 0 8px;"] .ip-intro p': ['We do not run generic studies: every research project responds to a specific political decision.'],
-      'section[style="margin:26px 0 0;"] .ip-intro p': ['Explore what we measure, who it is for, and why working on it with GP matters.'],
+      'section[style="margin:26px 0 0;"] .ip-intro p': ['Explore what we measure, who it is for, and why working on it with GOPE Consulting matters.'],
       '.ip-acc-title': [
-        'What we measure',
-        'Who it is for',
-        'Why GP'
+        'What do we measure?',
+        'Who is it for?',
+        'Why GOPE Consulting?'
       ],
       '#ip-1 li': [
         'Image and positioning of leaders.',
@@ -86,13 +86,12 @@
       '.ip-highlight p': ['Political advantage is not about knowing more, but about understanding earlier. Deciding with data, anticipating scenarios, and reducing uncertainty separates those who react from those who lead.'],
       '#cta h2': ['Ready to research'],
       '#cta > p': ['Do you need to understand the scenario before acting? We design custom research for your political context.'],
-      '.ip-cta-buttons a:first-child': ['Contact GP'],
+      '.ip-cta-buttons a:first-child': ['Contact GOPE Consulting'],
       '.ip-cta-buttons a.secondary': ['Request an initial assessment'],
       'footer .footer-col:nth-child(1) h4': ['Contact'],
       'footer .footer-col:nth-child(1) p': [
-        '<strong>Address:</strong> Av. Rivadavia 1725, CABA',
-        '<strong>Phone:</strong> 54 11 554746300<br>54 9 2325457856',
-        '<strong>Email:</strong> contacto@gp.com'
+        '<strong>Phone:</strong> <a href="https://wa.me/541122705173" target="_blank" rel="noopener">+54 11 2270 5173</a><br><a href="https://wa.me/541139282896" target="_blank" rel="noopener">+54 11 3928 2896</a>',
+        '<strong>Email:</strong> <a href="mailto:info@gopeconsulting.com">info@gopeconsulting.com</a>'
       ],
       'footer .footer-col:nth-child(2) h4': ['Services'],
       'footer .footer-col:nth-child(2) li a': [
@@ -103,24 +102,24 @@
       'footer .footer-col:nth-child(3) h4': ['Newsletter'],
       'footer .footer-col:nth-child(3) p': ['Subscribe to receive updates and strategic resources.'],
       'footer .footer-newsletter button': ['Send'],
-      '#footer-text': ['&copy; 2025 GP Political Consulting. All rights reserved.']
+      '#footer-text': ['&copy; 2026 GOPE Consulting. All rights reserved.']
     },
     attrs: {
       'html::lang': ['en'],
-      '.tm-header-badge::aria-label': ['GP home'],
+      '.tm-header-badge::aria-label': ['GOPE Consulting home'],
       '.tm-quick-menu::aria-label': ['Quick links'],
       '.language-selector::aria-label': ['Language selector'],
       '.lang-toggle::aria-label': ['Select language'],
       '.lang-menu::aria-label': ['Languages'],
-      '.tm-header-badge img::alt': ['GP Political Consulting'],
+      '.tm-header-badge img::alt': ['GOPE Consulting'],
       '.lang-toggle img::alt': ['Language'],
       '.ip-hero > img::alt': ['Public opinion research'],
       'footer .footer-newsletter input::placeholder': ['Email address'],
-      '.ip-cta-buttons a:first-child::aria-label': ['Contact GP'],
+      '.ip-cta-buttons a:first-child::aria-label': ['Contact GOPE Consulting'],
       '.ip-cta-buttons a.secondary::aria-label': ['Request an initial assessment']
     },
     hrefs: {
-      '.ip-cta-buttons a:first-child': ['mailto:info@gp.com?subject=Public%20Opinion%20Research%20Inquiry&body=Hello,%20I%20would%20like%20to%20discuss%20an%20initial%20assessment%20and%20the%20goals%20of%20my%20project.']
+      '.ip-cta-buttons a:first-child': ['index.html#contact-form']
     }
   };
 

@@ -9,7 +9,7 @@
   };
 
   const EN = {
-    title: 'Outsiders on the Rise | GP Newsletter',
+    title: 'Outsiders on the Rise | GOPE Consulting newsletter',
     html: {
       '.tm-quick-menu': ['<a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a><a href="https://www.whatsapp.com/" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>'],
       '.lang-option[data-lang="es"]': ['Spanish'],
@@ -24,7 +24,7 @@
       '.mobile-menu #nav-contacto-mobile': ['Contact'],
       '.nl-kicker': ['Ecosystem · Voter · 2025'],
       '.nl-title': ['Outsiders on the rise: how the political board is being reshaped'],
-      '.nl-meta': ['GP strategic newsletter · 6 min read'],
+      '.nl-meta': ['GOPE Consulting Newsletter · 6 min read'],
       '.nl-lead': ['Competition is no longer centered on traditional party structures. Figures without political machinery capture votes, legitimacy, and real power through distrust, performance, and disintermediation.'],
       'article > p': [
         'For decades, political competition was dominated by traditional party structures: hierarchical, territorial, and predictable organizations. Yet in recent years, and even more strongly as 2025 approaches, that model shows clear signs of exhaustion. In its place, outsider figures are emerging who, without the classic backing of parties, manage to capture attention, votes, and real power.',
@@ -50,29 +50,26 @@
       ],
       '.nl-aside': ['<strong>Algorithmic logic:</strong> constant visibility, short emotional messages, and polarization as an engine of reach.'],
       'article h2': ['Conclusion: it is not who wins, but how they win'],
-      '.nl-footer-note': ['If you want to receive these analyses in your inbox, subscribe to the GP newsletter.'],
+      '.nl-footer-note': ['If you want to receive these analyses in your inbox, subscribe to the GOPE Consulting newsletter.'],
       'footer .footer-col:nth-child(1) h4': ['Contact'],
       'footer .footer-col:nth-child(1) p': [
-        '<strong>Address:</strong> Av. Rivadavia 1725, CABA',
-        '<strong>Phone:</strong> 54 11 554746300<br>54 9 2325457856',
-        '<strong>Email:</strong> contacto@gp.com'
+        '<strong>Phone:</strong> <a href="https://wa.me/541122705173" target="_blank" rel="noopener">+54 11 2270 5173</a><br><a href="https://wa.me/541139282896" target="_blank" rel="noopener">+54 11 3928 2896</a>',
+        '<strong>Email:</strong> <a href="mailto:info@gopeconsulting.com">info@gopeconsulting.com</a>'
       ],
       'footer .footer-col:nth-child(2) h4': ['Services'],
-      'footer .footer-col:nth-child(2) li': [
-        'Institutional planning and strengthening',
-        'Political communication and campaigns',
-        'Public opinion research',
-        'Training and school of government'
-      ],
-      'footer .footer-col:nth-child(3) h4': ['Newsletter'],
+      'footer .footer-col:nth-child(2) li a': [
+        'Marketing Advisory',
+        'Strategic Consulting',
+        'Public Opinion Research'
+      ],      'footer .footer-col:nth-child(3) h4': ['Newsletter'],
       'footer .footer-col:nth-child(3) p': ['Subscribe to receive updates and strategic resources.'],
       'footer .footer-newsletter button': ['Send'],
-      '#footer-text': ['&copy; 2025 GP Political Consulting. All rights reserved.']
+      '#footer-text': ['&copy; 2026 GOPE Consulting. All rights reserved.']
     },
     attrs: {
       'html::lang': ['en'],
-      '.tm-header-badge::aria-label': ['GP home'],
-      '.tm-header-badge img::alt': ['GP Political Consulting'],
+      '.tm-header-badge::aria-label': ['GOPE Consulting home'],
+      '.tm-header-badge img::alt': ['GOPE Consulting'],
       '.tm-quick-menu::aria-label': ['Quick links'],
       '.language-selector::aria-label': ['Language selector'],
       '.lang-toggle::aria-label': ['Select language'],

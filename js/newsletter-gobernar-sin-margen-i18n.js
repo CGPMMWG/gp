@@ -9,7 +9,7 @@
   };
 
   const EN = {
-    title: 'Governing Without Room to Spare | GP Newsletter',
+    title: 'Governing Without Room to Spare | GOPE Consulting newsletter',
     html: {
       '.tm-quick-menu': ['<a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a><a href="https://www.whatsapp.com/" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>'],
       '.lang-option[data-lang="es"]': ['Spanish'],
@@ -24,7 +24,7 @@
       '.mobile-menu #nav-contacto-mobile': ['Contact'],
       '.nl-kicker': ['Government · Crisis · 2025'],
       '.nl-title': ['Governing without room to spare: unpopular decisions in critical contexts'],
-      '.nl-meta': ['GP strategic newsletter · 6 min read'],
+      '.nl-meta': ['GOPE Consulting Newsletter · 6 min read'],
       '.nl-lead': ['When there is no good news, the challenge is to sustain legitimacy without denying the cost. The key is to manage political damage with clarity, presence, and strategy.'],
       'article > p': [
         'There are moments when governing stops being a battle over agenda and becomes an exercise in damage management. Critical economic conditions, social conflict, unavoidable adjustments, or external crises reduce room for maneuver to a minimum.',
@@ -51,29 +51,26 @@
       ],
       '.nl-aside': ['<strong>Effective communication:</strong> in adverse situations, the goal is not enthusiasm, but understanding and predictability. Explain why, acknowledge the real impact, and avoid technical jargon or euphemisms.'],
       'article h2': ['Conclusion: governing when there is no applause'],
-      '.nl-footer-note': ['If you want to receive these analyses in your inbox, subscribe to the GP newsletter.'],
+      '.nl-footer-note': ['If you want to receive these analyses in your inbox, subscribe to the GOPE Consulting newsletter.'],
       'footer .footer-col:nth-child(1) h4': ['Contact'],
       'footer .footer-col:nth-child(1) p': [
-        '<strong>Address:</strong> Av. Rivadavia 1725, CABA',
-        '<strong>Phone:</strong> 54 11 554746300<br>54 9 2325457856',
-        '<strong>Email:</strong> contacto@gp.com'
+        '<strong>Phone:</strong> <a href="https://wa.me/541122705173" target="_blank" rel="noopener">+54 11 2270 5173</a><br><a href="https://wa.me/541139282896" target="_blank" rel="noopener">+54 11 3928 2896</a>',
+        '<strong>Email:</strong> <a href="mailto:info@gopeconsulting.com">info@gopeconsulting.com</a>'
       ],
       'footer .footer-col:nth-child(2) h4': ['Services'],
-      'footer .footer-col:nth-child(2) li': [
-        'Institutional planning and strengthening',
-        'Political communication and campaigns',
-        'Public opinion research',
-        'Training and school of government'
-      ],
-      'footer .footer-col:nth-child(3) h4': ['Newsletter'],
+      'footer .footer-col:nth-child(2) li a': [
+        'Marketing Advisory',
+        'Strategic Consulting',
+        'Public Opinion Research'
+      ],      'footer .footer-col:nth-child(3) h4': ['Newsletter'],
       'footer .footer-col:nth-child(3) p': ['Subscribe to receive updates and strategic resources.'],
       'footer .footer-newsletter button': ['Send'],
-      '#footer-text': ['&copy; 2025 GP Political Consulting. All rights reserved.']
+      '#footer-text': ['&copy; 2026 GOPE Consulting. All rights reserved.']
     },
     attrs: {
       'html::lang': ['en'],
-      '.tm-header-badge::aria-label': ['GP home'],
-      '.tm-header-badge img::alt': ['GP Political Consulting'],
+      '.tm-header-badge::aria-label': ['GOPE Consulting home'],
+      '.tm-header-badge img::alt': ['GOPE Consulting'],
       '.tm-quick-menu::aria-label': ['Quick links'],
       '.language-selector::aria-label': ['Language selector'],
       '.lang-toggle::aria-label': ['Select language'],
