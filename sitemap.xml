@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://gottlerpentke.com/</loc></url>
-  <url><loc>https://gottlerpentke.com/digital-advertisement.html</loc></url>
-  <url><loc>https://gottlerpentke.com/consultoria-estrategica.html</loc></url>
-  <url><loc>https://gottlerpentke.com/investigacion-opinion-publica.html</loc></url>
-  <url><loc>https://gottlerpentke.com/news-daily.html</loc></url>
-  <url><loc>https://gottlerpentke.com/newsletter-fragmentacion.html</loc></url>
-  <url><loc>https://gottlerpentke.com/newsletter-outsiders.html</loc></url>
-  <url><loc>https://gottlerpentke.com/newsletter-gobernar-sin-margen.html</loc></url>
-  <url><loc>https://gottlerpentke.com/newsletter-venezuela-colapso.html</loc></url>
+  <url><loc>https://www.gopeconsulting.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://www.gopeconsulting.com/digital-advertisement.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.gopeconsulting.com/consultoria-estrategica.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.gopeconsulting.com/investigacion-opinion-publica.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.gopeconsulting.com/news-daily.html</loc><priority>0.7</priority></url>
+  <url><loc>https://www.gopeconsulting.com/newsletter-fragmentacion.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.gopeconsulting.com/newsletter-outsiders.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.gopeconsulting.com/newsletter-municipios-desiguales.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.gopeconsulting.com/newsletter-gobernar-sin-margen.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.gopeconsulting.com/newsletter-venezuela-colapso.html</loc><priority>0.6</priority></url>
 </urlset>

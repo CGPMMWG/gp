@@ -1,6 +1,6 @@
 :root {
-    --font-heading: "Söhne", "Sohne", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --font-body: "Söhne", "Sohne", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-heading: "Sohne", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-body: "Sohne", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --color-bg: #0f1115;
     --color-surface: #15181f;
     --color-surface-strong: #1c2027;
@@ -834,7 +834,7 @@ video-container {
 }
 
 #title {
-    font-family: 'Bebas Neue', 'Sohne', 'Inter', sans-serif;
+    font-family: "Manrope", "Inter", Arial, sans-serif;
     text-transform: uppercase;
     font-size: clamp(2.8rem, 6vw, 5.5rem);
     line-height: 0.95;
@@ -1763,7 +1763,7 @@ body.no-scroll { overflow: hidden !important; }
     visibility: visible !important;
 }
 
-/* Estilos espec?ficos para la secci?n "Bienvenidos a TrendMakers" */
+/* Estilos espec?ficos para la secci?n "Bienvenidos a GOPE Consulting" */
 #inicio {
     position: relative;
     min-height: auto;
@@ -1986,7 +1986,7 @@ body.no-scroll { overflow: hidden !important; }
 
 /* Estilos espec?ficos para la secci?n "Nuestros Servicios" */
 #servicios {
-    height: auto; /* Ajusta seg�n contenido */
+    height: auto; /* Ajusta seg?n contenido */
     position: relative;
     background: #0f1115 !important;
     padding: 0;
@@ -2216,8 +2216,17 @@ nav ul li a:hover::after {
 
 .contact-form-section h2 {
     font-size: clamp(2rem, 3vw, 2.8rem);
-    margin-bottom: 10px;
+    margin: 0 auto 12px;
     line-height: 1.1;
+    max-width: 900px;
+}
+
+.contact-copy {
+    max-width: 760px;
+    margin: 0 auto;
+    color: rgba(255,255,255,0.78);
+    font-size: clamp(1rem, 1.5vw, 1.18rem);
+    line-height: 1.65;
 }
 
 .contact-layout {
@@ -2227,7 +2236,7 @@ nav ul li a:hover::after {
     justify-items: center;
     gap: 20px;
     width: min(90vw, 900px);
-    margin: 22px auto 0;
+    margin: 28px auto 0;
 }
 
 .contact-card {
@@ -2594,22 +2603,54 @@ h1 {
 
 .blog-header {
   max-width: 900px;
-  margin: 0 auto clamp(24px, 4vw, 32px);
+  margin: 0 auto clamp(14px, 2.5vw, 22px);
   text-align: center;
   color: var(--color-contrast);
+  display: grid;
+  justify-items: center;
 }
 .blog-header .section-title::after {
   display: none;
 }
-.blog-all-link {
-  margin-top: clamp(18px, 3vw, 28px);
-  text-align: center;
+.blog-all-cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto clamp(22px, 3vw, 34px);
+  width: min(100%, 760px);
 }
+.blog-all-cta,
 .blog-all-link a {
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--color-contrast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 620px);
+  min-height: 92px;
+  padding: 22px 56px;
+  border-radius: 999px;
+  border: 3px solid rgba(255, 247, 194, 0.98);
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255,255,255,0.7), transparent 22%),
+    linear-gradient(135deg, #f0a900 0%, #ffcf24 34%, #fff2a5 54%, #f6b800 100%);
+  color: #101216;
+  font-size: clamp(1.35rem, 1.05rem + 1vw, 1.95rem);
+  font-weight: 900;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 28px 60px rgba(245, 180, 0, 0.42), 0 0 46px rgba(245, 180, 0, 0.36), 0 0 0 1px rgba(255,255,255,0.2);
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+.blog-all-cta::after,
+.blog-all-link a::after {
+  content: "→";
+  margin-left: 10px;
+  font-size: 1.1em;
+}
+.blog-all-cta:hover,
+.blog-all-link a:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 34px 72px rgba(245, 180, 0, 0.52), 0 0 56px rgba(245, 180, 0, 0.44), 0 0 0 1px rgba(255,255,255,0.26);
+  filter: brightness(1.07) saturate(1.08);
 }
 .blog-title-row {
   display: flex;
@@ -2866,7 +2907,7 @@ h1 {
   font-size: 0.95rem;
 }
 .newsletter-card__cta::after {
-  content: "→";
+  content: "?";
   font-size: 0.95em;
   transition: transform 160ms ease;
 }
@@ -3003,7 +3044,7 @@ h1 {
   .process-step::after { display: none; }
 }
 
-/* Mobile: solo títulos y fondo negro */
+/* Mobile: solo titulos y fondo negro */
 @media (max-width: 640px) {
   .process-step {
     background: #0a0a0d;

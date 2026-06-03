@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gottlerpentke.com/sitemap.xml
+Sitemap: https://www.gopeconsulting.com/sitemap.xml
