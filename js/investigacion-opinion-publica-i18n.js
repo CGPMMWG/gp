@@ -45,6 +45,16 @@
         'Models and tracking to estimate scenarios and sensitivity to events.',
         'We test perception, narrative, and policies to adjust positioning and messaging.'
       ],
+      '.ip-service-box h3': [
+        'Understand how the electorate thinks and speaks',
+        'Analyze agenda installation',
+        'Direct communication and citizen contact'
+      ],
+      '.ip-service-box p': [
+        'Through focus groups and qualitative studies, we identify perceptions, arguments, doubts, and emotions that do not always appear in a traditional survey.',
+        'We study which issues gain relevance, which messages manage to take hold, and which opportunities exist to intervene in public conversation.',
+        'We implement direct contact actions through WhatsApp, SMS, IVR, call centers, and mass phone meetings to inform, listen, mobilize, and segment specific audiences.'
+      ],
       '.ip-step h3': [
         'Strategic methodological design',
         'Deep data analysis',
@@ -84,8 +94,8 @@
         'Results designed for decision-making, not just reporting.'
       ],
       '.ip-highlight p': ['Political advantage is not about knowing more, but about understanding earlier. Deciding with data, anticipating scenarios, and reducing uncertainty separates those who react from those who lead.'],
-      '#cta h2': ['Ready to research'],
-      '#cta > p': ['Do you need to understand the scenario before acting? We design custom research for your political context.'],
+      '#cta h2': ['Before acting, understand the scenario'],
+      '#cta > p': ['Need to understand the scenario before acting? We design custom research for your political context.'],
       '.ip-cta-buttons a:first-child': ['Contact GOPE Consulting'],
       '.ip-cta-buttons a.secondary': ['Request an initial assessment'],
       'footer .footer-col:nth-child(1) h4': ['Contact'],

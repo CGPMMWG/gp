@@ -1353,6 +1353,29 @@ footer {
     width: 75px; /* Ajusta el tama?o de las im?genes seg?n sea necesario */
     height: auto;
 }
+
+.footer-brand-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 28px 20px 22px;
+    background: #0f1115;
+    color: rgba(255,255,255,0.88);
+    font-weight: 800;
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.footer-brand-strip img {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    opacity: 0.9;
+    filter: brightness(1.08) saturate(0.95);
+}
+
 .footer-new {
   background: #090b10;
   border-top: 1px solid rgba(255,255,255,0.08);
@@ -1463,6 +1486,15 @@ footer {
   .footer-col ul { justify-items: center; }
   .footer-newsletter { flex-direction: column; width: 100%; }
   .footer-newsletter button { width: 100%; }
+  .footer-brand-strip {
+    gap: 10px;
+    padding: 24px 16px 18px;
+    font-size: 0.96rem;
+  }
+  .footer-brand-strip img {
+    width: 38px;
+    height: 38px;
+  }
   .footer-new {
     padding: 28px 14px 32px;
   }
@@ -2483,6 +2515,8 @@ nav ul li a:hover::after {
 }
 
 .contact-card {
+    position: relative;
+    overflow: hidden;
     background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
     border: 1px solid rgba(255,255,255,0.14);
     box-shadow: 0 28px 52px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.12);
@@ -2494,7 +2528,20 @@ nav ul li a:hover::after {
     box-sizing: border-box;
 }
 
+.contact-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(42% 60% at 86% 76%, rgba(143, 184, 255, 0.13), transparent 68%),
+        linear-gradient(90deg, rgba(24,27,34,0.15), rgba(24,27,34,0.74));
+    pointer-events: none;
+    z-index: 0;
+}
+
 .contact-form-section form {
+    position: relative;
+    z-index: 1;
     width: 100%;
     text-align: left;
     margin: 0;
@@ -2545,10 +2592,26 @@ nav ul li a:hover::after {
     background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
 }
 
+.contact-form-section input:-webkit-autofill,
+.contact-form-section input:-webkit-autofill:hover,
+.contact-form-section input:-webkit-autofill:focus,
+.contact-form-section textarea:-webkit-autofill,
+.contact-form-section textarea:-webkit-autofill:hover,
+.contact-form-section textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--color-contrast) !important;
+    caret-color: var(--color-contrast);
+    box-shadow:
+        0 0 0 1000px rgba(44, 48, 56, 0.92) inset,
+        inset 0 1px 0 rgba(255,255,255,0.08) !important;
+    border-color: rgba(255,255,255,0.18) !important;
+    transition: background-color 9999s ease-out 0s;
+}
+
 .contact-button {
     margin-top: 10px;
     width: 100%;
     justify-content: center;
+    color: #ffffff !important;
     background: linear-gradient(135deg, #1d1f24 0%, #2b2f37 45%, #1f2229 100%);
     border: 1px solid rgba(255,255,255,0.25);
     border-radius: 999px;
@@ -2563,6 +2626,7 @@ nav ul li a:hover::after {
 }
 
 .contact-button:hover {
+    color: #f5b400 !important;
     filter: brightness(1.05);
     transform: translateY(-2px);
     box-shadow: 0 20px 42px rgba(0,0,0,0.45), 0 0 0 1px rgba(208,211,214,0.35);
